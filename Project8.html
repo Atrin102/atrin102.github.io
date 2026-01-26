@@ -1,0 +1,265 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Project: GNSS Antenna Capstone (L1/L5)</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header id="header">
+            <a href="index.html" class="logo">My Portfolio</a>
+        </header>
+
+        <!-- Nav -->
+        <nav id="nav">
+            <ul class="links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Resume.html">Resume</a></li>
+                <li class="active"><a href="Project8.html">GNSS</a></li>
+                <li><a href="Project7.html">Rocketry</a></li>
+                <li><a href="Project6.html">Baja SAE</a></li>
+                <li><a href="Project5.html">RC Car</a></li>
+                <li><a href="Project2.html">HoopNet</a></li>
+                <li><a href="Project4.html">PCB Design</a></li>
+                <li><a href="Project1.html">Clinic Website</a></li>
+            </ul>
+            <ul class="icons">
+                <li><a href="https://www.linkedin.com/in/atrin-shahrokh" target="_blank" class="icon brands fa-linkedin"><span class="label">linkedin</span></a></li>
+            </ul>
+        </nav>
+
+        <!-- Main -->
+        <div id="main">
+
+            <!-- Post -->
+            <section class="post">
+                <header class="major">
+                    <span class="date">2026</span>
+                    <h1>GNSS Antenna Capstone Project</h1>
+                    <p>
+                        <strong>SKILLS USED:</strong>
+                        Antenna Design (L1/L5) | RF & Microwave Design | Keysight ADS | Altair FEKO |
+                        S-Parameter & Noise Figure Analysis | Filters & Matching | PCB Design | System Integration | Field Testing |
+                    </p>
+                </header>
+
+                <!-- Content -->
+                <div class="wrapper">
+                    <div class="inner">
+
+                        <hr>
+                        <h3 class="major">Introduction</h3>
+                        <p>
+                            For my capstone project, our team designed a compact dual-band GNSS antenna system intended
+                            for autonomous vehicle applications. The goal was to support both GPS L1 (1575.42 MHz) and L5 (1176.45 MHz)
+                            to improve positioning reliability, reduce ionospheric error effects, and maintain consistent performance in a
+                            realistic automotive environment where multipath and interference can significantly degrade GNSS reception.
+                        </p>
+
+                        <hr>
+                        <h3 class="major" style="text-decoration: underline;">Why Dual-Band GNSS (L1 and L5)</h3>
+                        <blockquote>
+                            <p>
+                                Single-frequency GNSS positioning can be strongly affected by ionospheric delay and signal distortion, which
+                                becomes more noticeable in challenging environments like cities and near large reflective surfaces. By using
+                                both L1 and L5, the receiver can apply ionosphere-compensation techniques that improve accuracy and stability.
+                                Our design work focused on enabling this dual-band reception while keeping the antenna system practical for
+                                hidden vehicle integration.
+                            </p>
+                        </blockquote>
+                        <div class="col-12"><span class="image fit"><img src="images/GNSSBandRequirements.png" alt="Dual-band band requirements" /></span></div>
+
+                        <hr>
+                        <h3 class="major" style="text-decoration: underline;">System Architecture</h3>
+                        <blockquote>
+                            <p>
+                                The complete system was designed as an end-to-end RF chain: antenna, low-noise amplifier (LNA), bandpass filtering,
+                                and a 50 ohm output connection to a receiver for data collection and analysis. The key objective at the system level
+                                was to preserve weak GNSS signals, amplify them early to protect signal-to-noise ratio, and reject out-of-band
+                                interference before the receiver stage.
+                            </p>
+                        </blockquote>
+                        <div class="col-12"><span class="image fit"><img src="images/GNSSblockdiagram.png" alt="GNSS system block diagram" /></span></div>
+
+                        <hr>
+                        <h3 class="major" style="text-decoration: underline;">Antenna Design and Vehicle Integration</h3>
+                        <blockquote>
+                            <p>
+                                A major part of the project was evaluating antenna topology and placement constraints for an autonomous vehicle.
+                                We compared practical antenna types and focused on approaches that could support dual-band operation while staying
+                                compact and manufacturable. We also considered real installation limitations such as sky visibility, cable loss,
+                                multipath reflections from vehicle body panels, and interference from nearby electronics.
+                            </p>
+                            <p>
+                                For placement, the most promising concealed option was centred under the roof liner due to strong sky visibility and
+                                reduced asymmetry relative to the vehicle. We treated placement as a design variable, since mounting location can
+                                change performance even when the antenna design is unchanged.
+                            </p>
+                        </blockquote>
+                        <div class="col-12"><span class="image fit"><img src="images/GNSSantennaplacement.png" alt="Antenna placement comparison table" /></span></div>
+
+                        <hr>
+                        <h3 class="major" style="text-decoration: underline;">Patch Antenna Design and Matching Approach</h3>
+                        <blockquote>
+                            <p>
+                                Our antenna design work included patch-antenna sizing, substrate considerations, and impedance matching strategies.
+                                Since a practical GNSS receiver interface is 50 ohms, matching and feed geometry were treated as essential to keep
+                                return loss low and maintain usable bandwidth across both frequency bands. We reviewed and compared common matching
+                                methods, including inset feeds and quarter-wave transformer approaches, to understand the tradeoffs between size,
+                                fabrication tolerance, and bandwidth.
+                            </p>
+                        </blockquote>
+                        <div class="col-12"><span class="image fit"><img src="images/GNSSpatchdesign.png" alt="Patch antenna design parameters" /></span></div>
+
+                        <div class="col-12"><span class="image fit"><img src="images/GNSSimpedancematching.png" alt="Patch antenna impedance matching" /></span></div>
+
+                        <hr>
+                        <h3 class="major" style="text-decoration: underline;">Low-Noise Amplifier Design (Keysight ADS)</h3>
+                        <blockquote>
+                            <p>
+                                Because GNSS signals are extremely low power at the antenna, an LNA is critical to preserve signal quality before
+                                downstream losses and filtering. Our LNA design targets included high gain, low noise figure, and a stable 50 ohm
+                                match across the L-band region covering both L5 and L1. The amplifier stage was developed and evaluated in Keysight
+                                ADS, with attention to gain, noise performance, and practical biasing for integration into a compact RF system.
+                            </p>
+                        </blockquote>
+                        <div class="col-12"><span class="image fit"><img src="images/GNSSlnadesign.png" alt="LNA design slide" /></span></div>
+
+                        <hr>
+                        <h3 class="major" style="text-decoration: underline;">Filtering, Selectivity, and Interference Control</h3>
+                        <blockquote>
+                            <p>
+                                In addition to amplification, we planned for bandpass filtering to suppress unwanted frequencies and reduce the impact
+                                of out-of-band interference. Since the LNA can amplify everything within its operating bandwidth, filtering helps
+                                protect the receiver and improves overall selectivity, especially in a vehicle environment where multiple radios and
+                                electronics can be operating at the same time.
+                            </p>
+                        </blockquote>
+
+                        <hr>
+                        <h3 class="major" style="text-decoration: underline;">PCB and Substrate Considerations</h3>
+                        <blockquote>
+                            <p>
+                                PCB material selection and stack-up decisions matter at GNSS frequencies because dielectric loss can directly reduce
+                                signal-to-noise ratio. We compared common substrate options and treated loss as a real system tradeoff against cost
+                                and manufacturability. This helped guide the direction of the physical implementation plan and informed what would be
+                                realistic for fabrication constraints.
+                            </p>
+                        </blockquote>
+
+                        <hr>
+                        <h3 class="major" style="text-decoration: underline;">Testing Plan and Validation</h3>
+                        <blockquote>
+                            <p>
+                                The validation plan focused on measuring GNSS performance under realistic conditions and comparing results across
+                                different mounting locations inside a vehicle. The idea was to combine simulation-driven design with field data to
+                                determine which hidden integration position gives the best balance of signal integrity, consistency, and practicality.
+                                Data collected through the receiver would be used to evaluate performance trends and guide final design decisions.
+                            </p>
+                        </blockquote>
+
+                        <hr>
+                        <h3 class="major" style="text-decoration: underline;">Project Timeline and Work Breakdown</h3>
+                        <blockquote>
+                            <p>
+                                This project was planned in staged phases: research, antenna and circuit design, simulation, integration, fabrication,
+                                and testing. A formal Gantt chart and task breakdown were created to track responsibilities, keep milestones realistic,
+                                and manage the design pipeline from early modelling through to final validation and reporting.
+                            </p>
+                        </blockquote>
+                        <div class="col-12"><span class="image fit"><img src="images/GNSSganttchart.png" alt="Project Gantt chart" /></span></div>
+
+                        <hr>
+                        <h3 class="major" style="text-decoration: underline;">Conclusion</h3>
+                        <blockquote>
+                            <p>
+                                This capstone project tied together antenna theory, RF circuit design, system-level thinking, and practical
+                                integration constraints in an autonomous-vehicle use case. Designing for both L1 and L5, planning for low-noise
+                                amplification and filtering, and treating vehicle placement as part of the engineering problem made the work feel
+                                very realistic and directly connected to modern GNSS-driven autonomy.
+                            </p>
+                        </blockquote>
+
+                    </div>
+                </div>
+            </section>
+
+            <footer>
+                <div class="major">
+                    <h2><a href="#">Get In Touch</a></h2>
+                    <p>If you'd like to know more about my work or discuss potential collaborations, feel free to contact me via email or phone.</p>
+                </div>
+            </footer>
+
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <section>
+                <form method="post" action="#">
+                    <div class="fields">
+                        <div class="field">
+                            <label for="name">Name</label>
+                            <input type="text" name="name" id="name" />
+                        </div>
+                        <div class="field">
+                            <label for="email">Email</label>
+                            <input type="text" name="email" id="email" />
+                        </div>
+                        <div class="field">
+                            <label for="message">Message</label>
+                            <textarea name="message" id="message" rows="3"></textarea>
+                        </div>
+                    </div>
+                    <ul class="actions">
+                        <li><input type="submit" value="Send Message" /></li>
+                    </ul>
+                </form>
+            </section>
+
+            <section class="split contact">
+                <section class="alt">
+                    <h3>Address</h3>
+                    <p>Toronto, Ontario<br />
+                    Canada, L4J 9K2</p>
+                </section>
+                <section>
+                    <h3>Phone</h3>
+                    <p><a href="#">(647) 515-1034</a></p>
+                </section>
+                <section>
+                    <h3>Email</h3>
+                    <p><a href="mailto:shahrokhatrin@gmail.com">shahrokhatrin@gmail.com</a></p>
+                </section>
+                <section>
+                    <h3>Social</h3>
+                    <ul class="icons alt">
+                        <li><a href="https://www.linkedin.com/in/atrin-shahrokh" target="_blank" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                    </ul>
+                </section>
+            </section>
+        </footer>
+
+        <!-- Copyright -->
+        <div id="copyright">
+            <ul><li>&copy; Atrin</li><li>Portfolio</li></ul>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
