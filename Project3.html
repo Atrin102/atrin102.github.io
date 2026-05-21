@@ -28,6 +28,7 @@
                 <li><a href="Project5.html">RC Car</a></li>
                 <li><a href="Project2.html">HoopNet</a></li>
                 <li><a href="Project4.html">PCB Design</a></li>
+                <li><a href="Project1.html">Clinic Website</a></li>
             </ul>
             <ul class="icons">
                 <li><a href="https://www.linkedin.com/in/atrin-shahrokh" target="_blank" class="icon brands fa-linkedin"><span class="label">linkedin</span></a></li>
@@ -67,8 +68,25 @@
                             Two out of three was still a failed product.
                         </p>
 
-                        <!-- IMAGE: Fig. B6 from the report. Photo of nuts and bolts inside the transparent container. Sets the physical scene. -->
-                        <div class="col-12"><span class="image fit"><img src="images/QApartsincontainer.png" alt="Nut-and-bolt assemblies inside the transparent packaging container" /></span></div>
+                        <hr>
+                        <h3 class="major" style="text-decoration: underline;">The PLC at Work</h3>
+                        <blockquote>
+                            <p>
+                                The two RSLogix 500 ladder programs below are the core of the control system. The first is the
+                                combined program we demonstrated, which handles both fastener and lid detection inside one cycle.
+                                The second is the parts-only program designed for a pre-lid station, where fastener inspection runs
+                                on its own without any lid-marker interference. Underneath them is a live shot of the green output
+                                energizing during a successful lid detection on the test rig, with the lid inspection screen
+                                visible on the monitor in the background.
+                            </p>
+                        </blockquote>
+
+                        <!-- IMAGE: Fig. A1 from the report. RSLogix 500 ladder logic for the COMBINED parts and lid detection (the demoed version). -->
+                        <div class="col-12"><span class="image fit"><img src="images/QAplccombined.png" alt="RSLogix 500 ladder logic for the combined parts and lid detection program" /></span></div>
+                        <!-- IMAGE: Fig. A2 from the report. RSLogix 500 ladder logic for PARTS-ONLY detection (the pre-lid station version). -->
+                        <div class="col-12"><span class="image fit"><img src="images/QAplcpartsonly.png" alt="RSLogix 500 ladder logic for the parts-only inspection station" /></span></div>
+                        <!-- IMAGE: Fig. B5 from the report. Green light photo during successful lid detection, with monitor visible in background. -->
+                        <div class="col-12"><span class="image fit"><img src="images/QAlidgreen.png" alt="Green PLC output energizing during a successful lid detection cycle" /></span></div>
 
                         <hr>
                         <h3 class="major" style="text-decoration: underline;">Why a PLC</h3>
@@ -104,15 +122,18 @@
                             </p>
                         </blockquote>
 
+                        <!-- IMAGE: Fig. B6 from the report. Photo of nuts and bolts inside the transparent container. Physical scene for what the PLC is monitoring. -->
+                        <div class="col-12"><span class="image fit"><img src="images/QApartsincontainer.png" alt="Nut-and-bolt assemblies inside the transparent packaging container" /></span></div>
+
                         <hr>
                         <h3 class="major" style="text-decoration: underline;">Ladder Logic Design</h3>
                         <blockquote>
                             <p>
-                                The ladder program is built around a small set of rungs, each responsible for one decision. The
-                                first rung captures the start signal: a physical Start Button on input I:1 OR'd with an HMI Start
-                                bit at B23:0, with a one-shot rising (OSR) instruction so a held button does not retrigger the
-                                inspection on every scan. That latches a Part-at-Camera bit (B23:2/15), which tells the vision
-                                system to capture and run an inspection.
+                                The ladder is built around a small set of rungs, each responsible for one decision. The first rung
+                                captures the start signal: a physical Start Button on input I:1 OR'd with an HMI Start bit at B23:0,
+                                with a one-shot rising (OSR) instruction so a held button does not retrigger the inspection on every
+                                scan. That latches a Part-at-Camera bit (B23:2/15), which tells the vision system to capture and
+                                run an inspection.
                             </p>
                             <p>
                                 The remaining rungs consume the OPC tags coming back. The Assembly Present rung drives the green
@@ -124,19 +145,13 @@
                                 inspected cleanly.
                             </p>
                             <p>
-                                There are two versions of the program in the project. One handles fastener detection only and was
-                                designed for a planned pre-lid station. The other is the combined version we actually demonstrated,
-                                which handles both fastener and lid checks inside a single ladder. The combined version uses an
-                                extra rung and one additional input tag, and forces a compromise on threshold tuning at the vision
-                                level because both checks share one image. The parts-only ladder is the cleaner architecture and is
-                                what I would build in a production system.
+                                The two ladder programs shown earlier reflect a real architectural choice. The parts-only ladder is
+                                cleaner: fewer rungs, one fewer input tag, and threshold settings on the vision side that can be
+                                tuned for fastener detection alone. The combined ladder is what we demonstrated, and it works, but
+                                it forces a compromise on the vision thresholds because both fastener and lid checks share one
+                                image. The parts-only version is what I would deploy in production.
                             </p>
                         </blockquote>
-
-                        <!-- IMAGE: Fig. A1 from the report. RSLogix 500 ladder logic for the COMBINED parts and lid detection (the final demoed version). -->
-                        <div class="col-12"><span class="image fit"><img src="images/QAplccombined.png" alt="RSLogix 500 ladder logic for the combined parts and lid detection program" /></span></div>
-                        <!-- IMAGE: Fig. A2 from the report. RSLogix 500 ladder logic for PARTS-ONLY detection (the cleaner pre-lid station version). -->
-                        <div class="col-12"><span class="image fit"><img src="images/QAplcpartsonly.png" alt="RSLogix 500 ladder logic for the parts-only inspection station" /></span></div>
 
                         <hr>
                         <h3 class="major" style="text-decoration: underline;">OPC Tag Integration</h3>
@@ -212,7 +227,9 @@
                                 module. There is no HMI screen in this version. A stack light is glanceable from anywhere on the
                                 work cell floor, does not depend on a host computer being awake, and represents pass/fail in a way
                                 that does not require interpretation. Each light is energized by a single OTE coil, with no latching
-                                needed because the next inspection cycle overwrites the previous result automatically.
+                                needed because the next inspection cycle overwrites the previous result automatically. The three
+                                photos below show each output triggering in turn: red on a container with loose parts, yellow on a
+                                container with the wrong assembly count, and green on a fully correct package.
                             </p>
                             <p>
                                 A LabVIEW-based HMI was discussed at the concept stage and would have exposed richer information:
@@ -228,8 +245,6 @@
                         <div class="col-12"><span class="image fit"><img src="images/QAyellowlight.png" alt="Yellow indicator output triggered by the incorrect-count rung" /></span></div>
                         <!-- IMAGE: Fig. B4 from the report. Green tower light photo, triggered by a fully correct package. -->
                         <div class="col-12"><span class="image fit"><img src="images/QAgreenlight.png" alt="Green indicator output triggered by a fully correct package" /></span></div>
-                        <!-- IMAGE: Fig. B5 from the report. Green light photo during successful lid detection. -->
-                        <div class="col-12"><span class="image fit"><img src="images/QAlidgreen.png" alt="Green indicator output during a successful lid detection cycle" /></span></div>
 
                         <hr>
                         <h3 class="major" style="text-decoration: underline;">Tradeoff: One Program vs. Two</h3>
