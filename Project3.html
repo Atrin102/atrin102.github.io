@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Project 3: Python Games</title>
+		<title>Project: Packaging QA Work Cell (Machine Vision + PLC)</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -27,12 +27,13 @@
 						<ul class="links">
 							<li><a href="index.html">Home</a></li>
 							<li><a href="Resume.html">Resume</a></li>
-							<li><a href="Project6.html">Baja SAE</a></li>
-							<li><a href="Project5.html">RC Car</a></li>
-							<li><a href="Project2.html">HoopNet</a></li>
-							<li><a href="Project4.html">PCB Design</a></li>
-							<li><a href="Project1.html">Clinic Website</a></li>
-							<li class="active"><a href="Project3.html">Coding Games</a></li>
+			                <li><a href="Project8.html">GNSS</a></li>
+							<li class="active"><a href="Project3.html">PLC</a></li>
+			                <li><a href="Project7.html">Rocketry</a></li>
+			                <li><a href="Project6.html">Baja SAE</a></li>
+			                <li><a href="Project5.html">RC Car</a></li>
+			                <li><a href="Project2.html">HoopNet</a></li>
+			                <li><a href="Project4.html">PCB Design</a></li>
 						</ul>
 						<ul class="icons">
 							<li><a href="https://www.linkedin.com/in/atrin-shahrokh"  target="_blank" class="icon brands fa-linkedin"><span class="label">linkedin</span></a></li>
@@ -42,349 +43,356 @@
 				<!-- Main -->
 					<div id="main">
 
-						<!-- Post -->
-							<section class="post">
-								<header class="major">
-									<span class="date" >2021</span>
-									<h1>Python Games</h1>
-									<p><strong>SKILLS USED:</strong> Python | Game Logic Development | Problem-Solving | Creativity | Graphics Programming |</p>
-								</header>
-								<h3 class="major"></h3>
-								<hr>
-									<h3 class="major" style="text-decoration: underline;">SPACE WARS</h3>
-									<blockquote>Space Wars is an exciting and engaging two-player game that I developed using Python and the Pygame library. The game begins with an attractive start screen that displays the game's title and a 'Start' button to commence the action. Upon clicking the button, the players are presented with a thrilling challenge, where they control a spaceship each.</p>
-									<p>The game's primary objective is to shoot down the opponent's spaceship while avoiding getting hit. The game features an immersive background music and sound effects that further enhance the gameplay experience. Players can move their spaceships using the arrow keys, which adds to the game's fluidity and allows for seamless navigation of the space terrain.</p>
-									<p>One of the standout features of the game is the ability to fire bullets that the spaceships can use to attack the enemy. The Pygame library is leveraged to create the game's graphics, giving it a stunning appearance that complements the game's dynamic nature. Additionally, the library is used to manage the game loop, ensuring smooth gameplay and seamless transitions from one level to another.</p>
-									<p>Overall, the Space Wars game is an excellent example of the potential of Python programming language and Pygame library in creating engaging and fun two-player games that can keep you entertained for hours.</blockquote>
-
-									<hr>
-									<h3 class="major"></h3>
-									<h3 class="major" style="text-decoration: underline;">Python Code used</h3>
-									<blockquote><span class="image left"><img src="images/spacewars.png" alt="" /></span>As I was developing the game, I spent a significant amount of time perfecting the start screen of the game. I began by defining the width and height of the window and setting the caption to "SPACE WARS!". Then, I loaded the background image and scaled it to fit the window size. I chose a white and black color scheme and defined two fonts: one for the title and one for the start button. I created a rectangle to represent the start button and rendered the text for the button. Finally, I wrote a function to draw the start screen, including the background image, title, and start button, and called this function within the main game loop. The result was a sleek and visually appealing start screen that entices players to click the start button and begin the game.</blockquote>
-									<section>
-									<hr>
-										<h3 style="text-decoration: underline;"> Code Used</h3>
-										<pre><code>WIDTH, HEIGHT = 900, 500                                         
-WIN = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("SPACE WARS!")
-
-# Define colors
-WHITE = (255, 255, 255)
-BLACK = (0, 0, 0)
-
-# Load background image
-bg_image = pygame.image.load('Assets/homebackground.png').convert()
-bg_image = pygame.transform.scale(bg_image, (WIDTH, HEIGHT))
-
-# Define fonts
-TITLE_FONT = pygame.font.SysFont('comicsans', 70, bold=True)
-BUTTON_FONT = pygame.font.SysFont('comicsans', 40)
-
-# Define buttons
-START_BUTTON_WIDTH, START_BUTTON_HEIGHT = 200, 75
-START_BUTTON_X, START_BUTTON_Y = WIDTH/2 - START_BUTTON_WIDTH/2, HEIGHT/2 - START_BUTTON_HEIGHT/2
-START_BUTTON = pygame.Rect(START_BUTTON_X, START_BUTTON_Y, START_BUTTON_WIDTH, START_BUTTON_HEIGHT)
-START_BUTTON_TEXT = BUTTON_FONT.render('Start', True, WHITE)
-
-def draw_start_screen():
-	# Draw background image
-	WIN.blit(bg_image, (0, 0))
-
-	# Draw title
-	title_text = TITLE_FONT.render('SPACE WARS!', True, WHITE)
-	title_x, title_y = WIDTH/2 - title_text.get_width()/2, 100
-	WIN.blit(title_text, (title_x, title_y))
-
-	# Draw start button
-	pygame.draw.rect(WIN, WHITE, START_BUTTON, 2)
-	start_text_x, start_text_y = START_BUTTON_X + START_BUTTON_WIDTH/2 -
-	 START_BUTTON_TEXT.get_width()/2, START_BUTTON_Y + START_BUTTON_HEIGHT/2 -
-	  START_BUTTON_TEXT.get_height()/2
-	WIN.blit(START_BUTTON_TEXT, (start_text_x, start_text_y))
-	pygame.display.update()
-
-def main():
-	# Run the start screen
-	draw_start_screen()
-
-	run = True
-	while run:
-		for event in pygame.event.get():
-			if event.type == pygame.QUIT:
-				run = False
-			if event.type == pygame.MOUSEBUTTONDOWN:
-				# Check if the start button was clicked
-				mouse_pos = pygame.mouse.get_pos()
-				if START_BUTTON.collidepoint(mouse_pos):
-					run = False
-if __name__ == '__main__':
-	main()</code></pre>
-									</section>
-									<hr>
-
-									<blockquote><span class="image right"><img src="images/game.png" alt="" /></span>As I worked on developing the start page for my space wars game, I made sure to incorporate the key elements of the game into the design. I coded the space ships and bullets into the page to give players a taste of what they can expect in the actual game. The space ships were designed to look sleek and futuristic, while the bullets were given a fiery trail to make them look more dangerous. By integrating these features into the start page, I hoped to give players a sense of what they're in for and entice them to play the game.</blockquote>
-
-									<h3 style="text-decoration: underline;">Code Used</h3>
-<pre><code>WIDTH, HEIGHT = 900, 500
-WIN = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("SPACE WARS")
-
-WHITE = (255, 255, 255)
-BLACK = (0, 0, 0)
-RED = (255, 0, 0)
-YELLOW = (255, 255, 0)
-
-BORDER = pygame.Rect(WIDTH//2 - 5, 0, 10, HEIGHT)
-
-BULLET_HIT_SOUND = pygame.mixer.Sound('Assets/Grenade+1.mp3')
-BULLET_FIRE_SOUND = pygame.mixer.Sound('Assets/Gun+Silencer.mp3')
-
-HEALTH_FONT = pygame.font.SysFont('comicsans', 40)
-WINNER_FONT = pygame.font.SysFont('comicsans', 100)
-
-FPS = 60
-VEL = 5
-BULLET_VEL = 7
-MAX_BULLETS = 3
-SPACESHIP_WIDTH, SPACESHIP_HEIGHT = 55, 40
-YELLOW_HIT = pygame.USEREVENT + 1
-RED_HIT = pygame.USEREVENT + 2
-YELLOW_SPACESHIP_IMAGE = pygame.image.load(
-os.path.join('Assets', 'spaceship_yellow.png'))
-YELLOW_SPACESHIP = pygame.transform.rotate(pygame.transform.scale(
-YELLOW_SPACESHIP_IMAGE, (SPACESHIP_WIDTH, SPACESHIP_HEIGHT)), 90)
-
-RED_SPACESHIP_IMAGE = pygame.image.load(
-os.path.join('Assets', 'spaceship_red.png'))
-RED_SPACESHIP = pygame.transform.rotate(pygame.transform.scale(
-RED_SPACESHIP_IMAGE, (SPACESHIP_WIDTH, SPACESHIP_HEIGHT)), 270)
-
-SPACE = pygame.transform.scale(pygame.image.load(
-os.path.join('Assets', 'rmb4.png')), (WIDTH, HEIGHT))
-
-
-def draw_window(red, yellow, red_bullets, yellow_bullets, red_health, yellow_health):
-WIN.blit(SPACE, (0, 0))
-pygame.draw.rect(WIN, BLACK, BORDER)
-
-red_health_text = HEALTH_FONT.render(
-"Health: " + str(red_health), 1, WHITE)
-yellow_health_text = HEALTH_FONT.render(
-"Health: " + str(yellow_health), 1, WHITE)
-WIN.blit(red_health_text, (WIDTH - red_health_text.get_width() - 10, 10))
-WIN.blit(yellow_health_text, (10, 10))
-
-WIN.blit(YELLOW_SPACESHIP, (yellow.x, yellow.y))
-WIN.blit(RED_SPACESHIP, (red.x, red.y))
-
-for bullet in red_bullets:
-pygame.draw.rect(WIN, RED, bullet)
-
-for bullet in yellow_bullets:
-pygame.draw.rect(WIN, YELLOW, bullet)
-
-pygame.display.update()
-
-
-def yellow_handle_movement(keys_pressed, yellow):
-if keys_pressed[pygame.K_a] and yellow.x - VEL > 0:  # LEFT
-yellow.x -= VEL
-if keys_pressed[pygame.K_d] and yellow.x + VEL + yellow.width < BORDER.x:  # RIGHT
-yellow.x += VEL
-if keys_pressed[pygame.K_w] and yellow.y - VEL > 0:  # UP
-yellow.y -= VEL
-if keys_pressed[pygame.K_s] and yellow.y + VEL + yellow.height < HEIGHT - 15:  # DOWN
-yellow.y += VEL
-
-
-def red_handle_movement(keys_pressed, red):
-if keys_pressed[pygame.K_LEFT] and red.x - VEL > BORDER.x + BORDER.width:  # LEFT
-red.x -= VEL
-if keys_pressed[pygame.K_RIGHT] and red.x + VEL + red.width < WIDTH:  # RIGHT
-red.x += VEL
-if keys_pressed[pygame.K_UP] and red.y - VEL > 0:  # UP
-red.y -= VEL
-if keys_pressed[pygame.K_DOWN] and red.y + VEL + red.height < HEIGHT - 15:  # DOWN
-red.y += VEL
-
-
-def handle_bullets(yellow_bullets, red_bullets, yellow, red):
-for bullet in yellow_bullets:
-bullet.x += BULLET_VEL
-if red.colliderect(bullet):
-pygame.event.post(pygame.event.Event(RED_HIT))
-yellow_bullets.remove(bullet)
-elif bullet.x > WIDTH:
-yellow_bullets.remove(bullet)
-
-for bullet in red_bullets:
-bullet.x -= BULLET_VEL
-if yellow.colliderect(bullet):
-pygame.event.post(pygame.event.Event(YELLOW_HIT))
-red_bullets.remove(bullet)
-elif bullet.x < 0:
-red_bullets.remove(bullet)
-
-
-def draw_winner(text):
-draw_text = WINNER_FONT.render(text, 1, WHITE)
-WIN.blit(draw_text, (WIDTH/2 - draw_text.get_width() /
-			2, HEIGHT/2 - draw_text.get_height()/2))
-pygame.display.update()
-pygame.time.delay(5000)
-
-
-def main():
-red = pygame.Rect(700, 300, SPACESHIP_WIDTH, SPACESHIP_HEIGHT)
-yellow = pygame.Rect(100, 300, SPACESHIP_WIDTH, SPACESHIP_HEIGHT)
-
-red_bullets = []
-yellow_bullets = []
-
-red_health = 10
-yellow_health = 10
-
-clock = pygame.time.Clock()
-run = True
-while run:
-clock.tick(FPS)
-for event in pygame.event.get():
-if event.type == pygame.QUIT:
-run = False
-pygame.quit()
-
-if event.type == pygame.KEYDOWN:
-if event.key == pygame.K_q and len(yellow_bullets) < MAX_BULLETS:
-	bullet = pygame.Rect(
-		yellow.x + yellow.width, yellow.y + yellow.height//2 - 2, 10, 5)
-	yellow_bullets.append(bullet)
-	BULLET_FIRE_SOUND.play()
-
-if event.key == pygame.K_m and len(red_bullets) < MAX_BULLETS:
-	bullet = pygame.Rect(
-		red.x, red.y + red.height//2 - 2, 10, 5)
-	red_bullets.append(bullet)
-	BULLET_FIRE_SOUND.play()
-
-if event.type == RED_HIT:
-red_health -= 1
-BULLET_HIT_SOUND.play()
-
-if event.type == YELLOW_HIT:
-yellow_health -= 1
-BULLET_HIT_SOUND.play()
-
-winner_text = ""
-if red_health <= 0:
-winner_text = "Yellow Wins!"
-
-if yellow_health <= 0:
-winner_text = "Red Wins!"
-
-if winner_text != "":
-draw_winner(winner_text)
-break
-
-keys_pressed = pygame.key.get_pressed()
-yellow_handle_movement(keys_pressed, yellow)
-red_handle_movement(keys_pressed, red)
-
-handle_bullets(yellow_bullets, red_bullets, yellow, red)
-
-draw_window(red, yellow, red_bullets, yellow_bullets,
-	red_health, yellow_health)
-
-main()
-
-
-if __name__ == "__main__":
-main()</code></pre>
-									
-
-					<hr>
-							<footer>
-								<div class="major">
-									<!--<a href="#" class="previous">Prev</a>-->
-									<h2><a href="#">Get In Touch</a></h2>
-									<p>If you're interested in my skills and experience, please don't hesitate to get in touch with me via email or cell.
-										I would be happy to answer any questions you may have about my work history or discuss potential employment opportunities.
-										I am highly motivated, reliable, and always eager to learn new things, which I believe would make me a valuable addition to any team.
-										</p>
-								</div>
-							</footer>
-
-								</div>
-								
-							</div>
-							
-
-							</section>
-
-					</div>
-
-				<!-- Footer -->
-					<footer id="footer">
-						<section>
-							<form method="post" action="#">
-								<div class="fields">
-									<div class="field">
-										<label for="name">Name</label>
-										<input type="text" name="name" id="name" />
-									</div>
-									<div class="field">
-										<label for="email">Email</label>
-										<input type="text" name="email" id="email" />
-									</div>
-									<div class="field">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="3"></textarea>
-									</div>
-								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</form>
-						</section>
-						<section class="split contact">
-							<section class="alt">
-								<h3>Address</h3>
-								<p>Toronto, Ontario<br />
-								Canada, L4J 9K2</p>
-							</section>
-							<section>
-								<h3>Phone</h3>
-								<p><a href="#">(647) 515-1034</a></p>
-							</section>
-							<section>
-								<h3>Email</h3>
-								<p><a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSMVxZPtJQssRZNTlZVvGmxsFqFCSqRPTSmXZBhCRkfKhxHmBkvnQQLGbWfBXPBqGlDVkrpp" target="_blank">shahrokhatrin@gmail.com</a></p>
-							</section>
-							<section>
-								<h3>Social</h3>
-								<ul class="icons alt">
-									<li><a href="https://www.linkedin.com/in/atrin-shahrokh-8b4238201"  target="_blank" class="icon brands fa-linkedin"><span class="label">linkedin</span></a></li>
-									<!-- <li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li> -->
-								</ul>
-							</section>
-						</section>
-					</footer>
-
-				<!-- Copyright -->
-					<div id="copyright">
-						<ul><li>&copy; Atrin</li><li>Portfolio</a></li></ul>
-					</div>
-
-			</div>
-
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+						   <!-- Post -->
+            <section class="post">
+                <header class="major">
+                    <span class="date">2026</span>
+                    <h1>Quality Assurance for an Automated Packaging Work Cell</h1>
+                    <p>
+                        <strong>SKILLS USED:</strong>
+                        Machine Vision (NI Vision Builder) | PLC Ladder Logic (RSLogix 500) |
+                        OPC Tag Communication | Industrial Automation | Image Thresholding & Blob Detection |
+                        System Integration | Allen-Bradley Hardware | Concept Selection & Tradeoff Analysis |
+                    </p>
+                </header>
+ 
+                <!-- Content -->
+                <div class="wrapper">
+                    <div class="inner">
+ 
+                        <hr>
+                        <h3 class="major">Introduction</h3>
+                        <p>
+                            For my fourth-year robotics and manufacturing automation course, my team and I built the quality
+                            assurance subsystem for an automated nut-and-bolt packaging line. The full line was split across four
+                            student work cells: assembly, transfer, packaging, and QA. Our cell sat at the end and had to verify
+                            three things before any container could be accepted: that the parts inside were correctly assembled
+                            rather than loose, that the count was right, and that the lid was on. All three had to be true at the
+                            same time. Two out of three was still a failed product. We built it using NI Vision Builder for the
+                            image inspection, ladder logic on an Allen-Bradley PLC for the control side, OPC tags to bridge the
+                            two, and a set of indicator lights as the operator interface.
+                        </p>
+ 
+                        <!-- IMAGE: Fig. B6 from the report. Photo of nuts and bolts inside the transparent container. -->
+                        <div class="col-12"><span class="image fit"><img src="images/QApartsincontainer.png" alt="Nut-and-bolt assemblies inside the transparent packaging container" /></span></div>
+ 
+                        <hr>
+                        <h3 class="major" style="text-decoration: underline;">Why Machine Vision for This Job</h3>
+                        <blockquote>
+                            <p>
+                                Before settling on vision, we worked through the obvious alternatives. Proximity or optical sensors
+                                could count parts entering the container, but they cannot tell whether a nut is actually threaded
+                                onto a bolt versus sitting next to one. A pneumatic press could confirm the lid is seated, but it
+                                only solves a third of the problem and adds mechanical hardware to a station that does not otherwise
+                                need it. Weight verification was interesting as a backup, but three correct assemblies and a wrong
+                                mix of loose nuts and bolts can land at the same total mass, so weight alone cannot distinguish a
+                                pass from a fail.
+                            </p>
+                            <p>
+                                Vision was the only single approach that could check all three conditions in one inspection cycle.
+                                It also paired naturally with a PLC, which is the right control platform for this kind of work
+                                because of deterministic scan cycles and reliable industrial I/O. A microcontroller would have been
+                                cheaper, but the PLC made the integration and debugging cycle much faster within the lab sessions
+                                we had.
+                            </p>
+                        </blockquote>
+ 
+                        <hr>
+                        <h3 class="major" style="text-decoration: underline;">System Architecture</h3>
+                        <blockquote>
+                            <p>
+                                The overall layout is straightforward. A camera is mounted in a fixed position above the inspection
+                                area and captures a top-down image of each container as it arrives. NI Vision Builder runs a
+                                multi-step inspection on that image, classifies what it sees using area-based blob detection, and
+                                writes the result of each check to a set of OPC tags. The PLC reads those tags inside its scan cycle,
+                                runs the ladder logic that decides pass or fail, and drives one of three indicator lights to give
+                                the operator immediate feedback. Green for a fully correct package, yellow for the wrong number of
+                                assemblies without any loose parts in the image, and red whenever loose nuts or bolts are present.
+                                A separate green output handles lid detection on the lid pass.
+                            </p>
+                            <p>
+                                End-to-end latency from inspection completion to lit indicator is under about 25 ms on the
+                                Allen-Bradley hardware we used, with a PLC scan time around 10 ms. The inspection cycle itself runs
+                                in about five seconds per container, which keeps the QA cell from holding up the upstream work cells.
+                            </p>
+                        </blockquote>
+ 
+                        <hr>
+                        <h3 class="major" style="text-decoration: underline;">Vision Inspection Logic</h3>
+                        <blockquote>
+                            <p>
+                                The vision inspection is built on area-based classification. We captured reference images of every
+                                object the system could see, including a nut by itself, a bolt by itself in multiple orientations,
+                                and a completed nut-and-bolt assembly. From those reference areas we built detection ranges wide
+                                enough to handle orientation variation but narrow enough to keep loose parts and assemblies in
+                                separate buckets. The combined area of an assembly works out to roughly 1.5 to 2 times the area of
+                                a single component, which gave us enough margin that the system did not need recalibration every
+                                time a part shifted position.
+                            </p>
+                            <p>
+                                Originally we ran the inspection steps in parallel: the sequence would branch into separate paths
+                                for bolt, nut, and assembly checks, and once any path returned a result the cycle could end. That
+                                turned out to be a problem. A container could pass through without all the required conditions
+                                actually being evaluated, which introduced inconsistency that had nothing to do with image quality.
+                                We rearranged the inspection state machine to run in series instead, so every cycle steps through
+                                every check before the result is sent to the PLC. That single change cleaned up a category of
+                                false results immediately.
+                            </p>
+                        </blockquote>
+ 
+                        <!-- IMAGE: Fig. B1 from the report. NI Vision Builder screen showing 3 assemblies detected with red bounding boxes. -->
+                        <div class="col-12"><span class="image fit"><img src="images/QAvisiondetection.png" alt="NI Vision Builder detecting three assembled nut-and-bolt pairs in a container" /></span></div>
+                        <!-- IMAGE: Fig. A3 from the report. NI Vision Builder inspection steps arranged in PARALLEL (the earlier, less reliable version). -->
+                        <div class="col-12"><span class="image fit"><img src="images/QAinspectionparallel.png" alt="NI Vision Builder inspection state machine running in parallel" /></span></div>
+                        <!-- IMAGE: Fig. A4 from the report. NI Vision Builder inspection steps arranged in SERIES (the final, reliable version). -->
+                        <div class="col-12"><span class="image fit"><img src="images/QAinspectionseries.png" alt="NI Vision Builder inspection state machine rearranged to run in series" /></span></div>
+ 
+                        <hr>
+                        <h3 class="major" style="text-decoration: underline;">Lid Detection and the Marker Iteration</h3>
+                        <blockquote>
+                            <p>
+                                Lid detection ended up being the part of the project with the most iteration, and it is a useful
+                                story because the answer was not where we expected to find it. The first version used a small black
+                                dot on the lid as the marker. The system could see the dot, which confirmed that lid detection was
+                                possible at all, but it missed often whenever the lid was slightly off-centre or the dot rotated
+                                out of position.
+                            </p>
+                            <p>
+                                The second version wrapped black tape around the rim of the lid instead. The thinking was that a
+                                ring is harder to miss than a dot and that it keeps the centre of the lid clear so the fasteners
+                                inside can still be inspected through it. In practice the ring made things worse. The bolts in this
+                                project are also black, and at the threshold settings we needed for area-based fastener detection,
+                                the system could not reliably tell the difference between a black-taped rim and a black bolt body.
+                                It was not a marginal problem. The interference was consistent enough that we could not ship that
+                                version.
+                            </p>
+                            <p>
+                                The third version was yellow tape around the rim. That sounds like a trivial change, but it solved
+                                the problem completely. Lid detection went from intermittent to a zero-failure rate across the test
+                                cycles we ran. The real lesson was that when the parts you are trying to ignore are dark, the marker
+                                colour matters far more than the marker shape. We had been iterating on geometry when the right
+                                variable to change was contrast.
+                            </p>
+                        </blockquote>
+ 
+                        <!-- IMAGE: Fig. C3 from the report. Overhead photo of the yellow-tape lid sitting on the inspection station. -->
+                        <div class="col-12"><span class="image fit"><img src="images/QAyellowlid.png" alt="Final yellow-tape lid marker on the inspection station" /></span></div>
+ 
+                        <hr>
+                        <h3 class="major" style="text-decoration: underline;">PLC Ladder Logic and OPC Integration</h3>
+                        <blockquote>
+                            <p>
+                                On the PLC side, the ladder logic in RSLogix 500 takes the vision outputs and drives the indicator
+                                lights. NI Vision Builder publishes one OPC tag per inspection condition: nut-only present,
+                                bolt-only present, completed assembly present, and lid present. The PLC reads those tags inside its
+                                scan cycle and decides what to display. Green turns on when the correct number of assemblies is
+                                detected and no loose parts are in the image. Yellow turns on when the count is wrong but nothing
+                                loose is present. Red turns on the moment any loose nut or bolt is detected, regardless of the
+                                assembly count, because that condition has to dominate the others.
+                            </p>
+                            <p>
+                                We built two versions of the ladder logic. The first handles only fastener detection and was meant
+                                for the planned pre-lid inspection station. The second is the combined version we actually
+                                demonstrated, which handles both fastener and lid checks in the same program. The combined version
+                                is simpler to deploy but, as discussed below, it constrains how precisely each inspection can be
+                                tuned.
+                            </p>
+                        </blockquote>
+ 
+                        <!-- IMAGE: Fig. A2 from the report. RSLogix 500 ladder logic for PART DETECTION ONLY (pre-lid station version). -->
+                        <div class="col-12"><span class="image fit"><img src="images/QAplcpartsonly.png" alt="RSLogix 500 ladder logic for the parts-only inspection station" /></span></div>
+                        <!-- IMAGE: Fig. A1 from the report. RSLogix 500 ladder logic for the COMBINED parts and lid detection (final demoed version). -->
+                        <div class="col-12"><span class="image fit"><img src="images/QAplccombined.png" alt="RSLogix 500 ladder logic for the combined parts and lid detection program" /></span></div>
+ 
+                        <hr>
+                        <h3 class="major" style="text-decoration: underline;">Indicator Light Interface</h3>
+                        <blockquote>
+                            <p>
+                                The operator interface is intentionally simple. Three coloured tower lights driven directly by the
+                                PLC, no HMI screen. The reasoning was that an indicator stack gives unambiguous, glanceable feedback
+                                from anywhere on the work cell floor and does not depend on any host computer being awake. A
+                                LabVIEW HMI was discussed during concept generation and would have added richer information like
+                                fault breakdowns, package counts, and historical trends. We chose not to build it inside this
+                                project's timeline, and it is the most obvious next step on the operator-experience side.
+                            </p>
+                        </blockquote>
+ 
+                        <!-- IMAGE: Fig. B2 from the report. Red light photo, taken at the actual PLC station, when loose parts are detected. -->
+                        <div class="col-12"><span class="image fit"><img src="images/QAredlight.png" alt="Red indicator light triggered when loose nuts or bolts are detected" /></span></div>
+                        <!-- IMAGE: Fig. B3 from the report. Yellow light photo when the assembly count is wrong but no loose parts are present. -->
+                        <div class="col-12"><span class="image fit"><img src="images/QAyellowlight.png" alt="Yellow indicator light triggered when assembly count is incorrect" /></span></div>
+                        <!-- IMAGE: Fig. B4 from the report. Green light photo when correct number of assemblies and no loose parts. -->
+                        <div class="col-12"><span class="image fit"><img src="images/QAgreenlight.png" alt="Green indicator light triggered when package contents are correct" /></span></div>
+                        <!-- IMAGE: Fig. B5 from the report. Green light photo with the lid inspection screen visible, showing successful lid detection. -->
+                        <div class="col-12"><span class="image fit"><img src="images/QAlidgreen.png" alt="Green indicator light during a successful lid detection cycle" /></span></div>
+ 
+                        <hr>
+                        <h3 class="major" style="text-decoration: underline;">Tradeoff: One Station vs. Two</h3>
+                        <blockquote>
+                            <p>
+                                The honest weakness in the final demonstrated system is that fastener detection and lid detection
+                                share the same inspection process. The better architecture, which we designed but did not build
+                                inside the project window, is a two-stage QA setup. The first station would inspect the package
+                                before the lid is placed and focus only on assembly count and loose-part detection. The second
+                                station, at the very end of the work cell, would only check for lid presence. Splitting them lets
+                                each station use threshold settings tuned for one task instead of a compromise that has to serve
+                                both, and it removes any possibility of the lid marker interfering with fastener detection in the
+                                first place.
+                            </p>
+                            <p>
+                                We made the call to ship the combined version because it let us finish the cross-group integration
+                                and get a full pass-fail demo running end to end. That was the right call for the deliverable, but
+                                the two-stage approach is the cleaner long-term design and is the first thing I would change in any
+                                next revision.
+                            </p>
+                        </blockquote>
+ 
+                        <hr>
+                        <h3 class="major" style="text-decoration: underline;">Concepts We Looked At But Did Not Build</h3>
+                        <blockquote>
+                            <p>
+                                A few other ideas got prototyped or evaluated and then set aside. Weight-based verification using a
+                                digital scale under the container was tested as a possible redundant check, and we collected baseline
+                                masses for the empty container, individual fasteners, and a completed package. The reason it stayed
+                                a backup rather than a primary method is the same one that ruled it out at the concept stage: weight
+                                alone cannot tell three good assemblies apart from a heavier-than-expected mix of loose parts. It is
+                                a useful sanity check, not a verification method on its own.
+                            </p>
+                            <p>
+                                A LabVIEW HMI was the other obvious extension. It would have made the inspection results far more
+                                informative than three lights can be, and it would have given the operator a way to drill into which
+                                specific condition failed. Within the project timeline we chose simple indicator lights and prioritized
+                                getting the vision-to-PLC chain working reliably.
+                            </p>
+                        </blockquote>
+ 
+                        <!-- IMAGE: Fig. B7 from the report. Photo of a container sitting on the digital scale during weight-based testing. -->
+                        <div class="col-12"><span class="image fit"><img src="images/QAweighing.png" alt="Container being weighed on a digital scale during the weight-based verification concept testing" /></span></div>
+ 
+                        <hr>
+                        <h3 class="major" style="text-decoration: underline;">Results</h3>
+                        <blockquote>
+                            <p>
+                                Under the controlled lab conditions of the final demonstration, the system met its core
+                                requirements. Assembly detection was reliable once the inspection steps ran in series, the
+                                area-based thresholds cleanly separated assembled fasteners from loose ones across orientation
+                                variation, and no false acceptances of loose parts were observed in our reference test set. Lid
+                                detection became fully consistent once the yellow-tape marker replaced the earlier black-tape and
+                                dot versions. OPC communication between Vision Builder and the PLC worked as expected, with
+                                inspection results reaching the correct ladder rungs and the indicator lights responding inside one
+                                additional PLC scan after each tag update.
+                            </p>
+                            <p>
+                                The system's main limitations are the ones imposed by relying on thresholding and fixed-camera
+                                imaging. Performance is sensitive to lighting, background, and camera position. A less controlled
+                                environment would require either more robust image processing or a more rigid imaging setup. That
+                                is a known property of this approach, not a surprise from the build.
+                            </p>
+                        </blockquote>
+ 
+                        <hr>
+                        <h3 class="major" style="text-decoration: underline;">Future Work</h3>
+                        <blockquote>
+                            <p>
+                                The clearest next step is to actually build the two-stage QA architecture, with a pre-lid station
+                                handling fastener inspection on its own optimized thresholds and a final station handling lid
+                                detection in isolation. Beyond that, a more rigid camera mount and a controlled lighting enclosure
+                                would reduce the recalibration sensitivity that fixed-threshold vision systems always carry. A
+                                LabVIEW HMI would replace the three indicator lights with richer fault breakdowns, package counts,
+                                and trend data, and a weight-based redundant check could sit underneath the vision system as a
+                                cross-validation layer for added confidence.
+                            </p>
+                        </blockquote>
+ 
+                        <hr>
+                        <h3 class="major" style="text-decoration: underline;">Conclusion</h3>
+                        <blockquote>
+                            <p>
+                                The QA subsystem ended up being a good lesson in the difference between picking the right algorithm
+                                and picking the right physical setup. The vision and PLC logic were not the hard part. The hard part
+                                was getting the imaging conditions stable enough that the algorithm could do its job, and noticing
+                                that the right fix for unreliable lid detection was a colour change rather than a shape change. We
+                                shipped a working integrated demo that distinguishes assemblies from loose parts, detects a lid
+                                reliably, and communicates a clear pass-fail decision through industrial hardware. We also walked
+                                away with a clear picture of the cleaner architecture we would build next time, which on balance is
+                                probably more useful than if everything had gone right on the first try.
+                            </p>
+                        </blockquote>
+ 
+                    </div>
+                </div>
+            </section>
+ 
+            <footer>
+                <div class="major">
+                    <h2><a href="#">Get In Touch</a></h2>
+                    <p>If you'd like to know more about my work or discuss potential collaborations, feel free to contact me via email or phone.</p>
+                </div>
+            </footer>
+ 
+        </div>
+ 
+        <!-- Footer -->
+        <footer id="footer">
+            <section>
+                <form method="post" action="#">
+                    <div class="fields">
+                        <div class="field">
+                            <label for="name">Name</label>
+                            <input type="text" name="name" id="name" />
+                        </div>
+                        <div class="field">
+                            <label for="email">Email</label>
+                            <input type="text" name="email" id="email" />
+                        </div>
+                        <div class="field">
+                            <label for="message">Message</label>
+                            <textarea name="message" id="message" rows="3"></textarea>
+                        </div>
+                    </div>
+                    <ul class="actions">
+                        <li><input type="submit" value="Send Message" /></li>
+                    </ul>
+                </form>
+            </section>
+ 
+            <section class="split contact">
+                <section class="alt">
+                    <h3>Address</h3>
+                    <p>Toronto, Ontario<br />
+                    Canada, L4J 9K2</p>
+                </section>
+                <section>
+                    <h3>Phone</h3>
+                    <p><a href="#">(647) 515-1034</a></p>
+                </section>
+                <section>
+                    <h3>Email</h3>
+                    <p><a href="mailto:shahrokhatrin@gmail.com">shahrokhatrin@gmail.com</a></p>
+                </section>
+                <section>
+                    <h3>Social</h3>
+                    <ul class="icons alt">
+                        <li><a href="https://www.linkedin.com/in/atrin-shahrokh" target="_blank" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                    </ul>
+                </section>
+            </section>
+        </footer>
+ 
+        <!-- Copyright -->
+        <div id="copyright">
+            <ul><li>&copy; Atrin</li><li>Portfolio</li></ul>
+        </div>
+ 
+    </div>
+ 
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
 </html>
