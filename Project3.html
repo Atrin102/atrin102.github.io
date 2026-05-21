@@ -1,337 +1,311 @@
 <!DOCTYPE HTML>
-<!--
-	Massively by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
-	<head>
-		<title>Project: Packaging QA Work Cell (Machine Vision + PLC)</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<head>
+    <title>Project: PLC Control for an Automated Packaging QA Work Cell</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+        <!-- Header -->
+        <header id="header">
+            <a href="index.html" class="logo">My Portfolio</a>
+        </header>
 
-				<!-- Header -->
-					<header id="header">
-						<a href="index.html" class="logo">My Portfolio</a>
-					</header>
+        <!-- Nav -->
+        <nav id="nav">
+            <ul class="links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Resume.html">Resume</a></li>
+                <li><a href="Project8.html">GNSS</a></li>
+                <li class="active"><a href="Project9.html">PLC QA</a></li>
+                <li><a href="Project7.html">Rocketry</a></li>
+                <li><a href="Project6.html">Baja SAE</a></li>
+                <li><a href="Project5.html">RC Car</a></li>
+                <li><a href="Project2.html">HoopNet</a></li>
+                <li><a href="Project4.html">PCB Design</a></li>
+            </ul>
+            <ul class="icons">
+                <li><a href="https://www.linkedin.com/in/atrin-shahrokh" target="_blank" class="icon brands fa-linkedin"><span class="label">linkedin</span></a></li>
+            </ul>
+        </nav>
 
-				<!-- Nav -->
-					<nav id="nav">
-						<ul class="links">
-							<li><a href="index.html">Home</a></li>
-							<li><a href="Resume.html">Resume</a></li>
-			                <li><a href="Project8.html">GNSS</a></li>
-							<li class="active"><a href="Project3.html">PLC</a></li>
-			                <li><a href="Project7.html">Rocketry</a></li>
-			                <li><a href="Project6.html">Baja SAE</a></li>
-			                <li><a href="Project5.html">RC Car</a></li>
-			                <li><a href="Project2.html">HoopNet</a></li>
-			                <li><a href="Project4.html">PCB Design</a></li>
-						</ul>
-						<ul class="icons">
-							<li><a href="https://www.linkedin.com/in/atrin-shahrokh"  target="_blank" class="icon brands fa-linkedin"><span class="label">linkedin</span></a></li>
-						</ul>
-					</nav>
+        <!-- Main -->
+        <div id="main">
 
-				<!-- Main -->
-					<div id="main">
-
-						   <!-- Post -->
+            <!-- Post -->
             <section class="post">
                 <header class="major">
                     <span class="date">2026</span>
-                    <h1>Quality Assurance for an Automated Packaging Work Cell</h1>
+                    <h1>PLC Control System for an Automated Packaging QA Work Cell</h1>
                     <p>
                         <strong>SKILLS USED:</strong>
-                        Machine Vision (NI Vision Builder) | PLC Ladder Logic (RSLogix 500) |
-                        OPC Tag Communication | Industrial Automation | Image Thresholding & Blob Detection |
-                        System Integration | Allen-Bradley Hardware | Concept Selection & Tradeoff Analysis |
+                        PLC Ladder Logic (RSLogix 500) | Allen-Bradley Hardware | OPC Tag Communication |
+                        Industrial Automation | Scan Cycle & Latency Design | Machine Vision Integration (NI Vision Builder) |
+                        System Integration | Operator Interface Design |
                     </p>
                 </header>
- 
+
                 <!-- Content -->
                 <div class="wrapper">
                     <div class="inner">
- 
+
                         <hr>
                         <h3 class="major">Introduction</h3>
                         <p>
-                            For my fourth-year robotics and manufacturing automation course, my team and I built the quality
-                            assurance subsystem for an automated nut-and-bolt packaging line. The full line was split across four
-                            student work cells: assembly, transfer, packaging, and QA. Our cell sat at the end and had to verify
-                            three things before any container could be accepted: that the parts inside were correctly assembled
-                            rather than loose, that the count was right, and that the lid was on. All three had to be true at the
-                            same time. Two out of three was still a failed product. We built it using NI Vision Builder for the
-                            image inspection, ladder logic on an Allen-Bradley PLC for the control side, OPC tags to bridge the
-                            two, and a set of indicator lights as the operator interface.
+                            For my fourth-year robotics and manufacturing automation course, my team and I built the PLC control
+                            system for the final quality assurance station of an automated nut-and-bolt packaging line. The full
+                            line was split across four student work cells: assembly, transfer, packaging, and QA. Our cell sat at
+                            the end, and the PLC was the brain of it. It had to read inspection results from the upstream machine
+                            vision system over OPC, run ladder logic in RSLogix 500 to decide whether each container passed three
+                            independent checks (correct assembly, correct count, lid present), and drive a set of indicator-light
+                            outputs as the operator interface. All three checks had to be true for a container to be accepted.
+                            Two out of three was still a failed product.
                         </p>
- 
-                        <!-- IMAGE: Fig. B6 from the report. Photo of nuts and bolts inside the transparent container. -->
+
+                        <!-- IMAGE: Fig. B6 from the report. Photo of nuts and bolts inside the transparent container. Sets the physical scene. -->
                         <div class="col-12"><span class="image fit"><img src="images/QApartsincontainer.png" alt="Nut-and-bolt assemblies inside the transparent packaging container" /></span></div>
- 
+
                         <hr>
-                        <h3 class="major" style="text-decoration: underline;">Why Machine Vision for This Job</h3>
+                        <h3 class="major" style="text-decoration: underline;">Why a PLC</h3>
                         <blockquote>
                             <p>
-                                Before settling on vision, we worked through the obvious alternatives. Proximity or optical sensors
-                                could count parts entering the container, but they cannot tell whether a nut is actually threaded
-                                onto a bolt versus sitting next to one. A pneumatic press could confirm the lid is seated, but it
-                                only solves a third of the problem and adds mechanical hardware to a station that does not otherwise
-                                need it. Weight verification was interesting as a backup, but three correct assemblies and a wrong
-                                mix of loose nuts and bolts can land at the same total mass, so weight alone cannot distinguish a
-                                pass from a fail.
+                                We considered a microcontroller as the lower-cost alternative. It could have run the same pass/fail
+                                logic, but a PLC was the right call here for a few reasons. Industrial PLCs run on deterministic scan
+                                cycles, which means latency from input to output is predictable and bounded rather than something we
+                                have to characterize ourselves. They handle digital I/O reliably through standard modules without
+                                needing extra protection circuitry. And the development cycle in RSLogix 500 (edit ladder, download,
+                                monitor live) is well-suited to iterating quickly inside a few lab sessions.
                             </p>
                             <p>
-                                Vision was the only single approach that could check all three conditions in one inspection cycle.
-                                It also paired naturally with a PLC, which is the right control platform for this kind of work
-                                because of deterministic scan cycles and reliable industrial I/O. A microcontroller would have been
-                                cheaper, but the PLC made the integration and debugging cycle much faster within the lab sessions
-                                we had.
+                                On the Allen-Bradley hardware we used, the scan time is around 10 ms, which gave us total system
+                                latency under about 25 ms from inspection completion to the indicator light turning on. That is well
+                                under what an operator perceives as instantaneous, which is exactly what you want for live pass/fail
+                                feedback.
                             </p>
                         </blockquote>
- 
+
                         <hr>
                         <h3 class="major" style="text-decoration: underline;">System Architecture</h3>
                         <blockquote>
                             <p>
-                                The overall layout is straightforward. A camera is mounted in a fixed position above the inspection
-                                area and captures a top-down image of each container as it arrives. NI Vision Builder runs a
-                                multi-step inspection on that image, classifies what it sees using area-based blob detection, and
-                                writes the result of each check to a set of OPC tags. The PLC reads those tags inside its scan cycle,
-                                runs the ladder logic that decides pass or fail, and drives one of three indicator lights to give
-                                the operator immediate feedback. Green for a fully correct package, yellow for the wrong number of
-                                assemblies without any loose parts in the image, and red whenever loose nuts or bolts are present.
-                                A separate green output handles lid detection on the lid pass.
-                            </p>
-                            <p>
-                                End-to-end latency from inspection completion to lit indicator is under about 25 ms on the
-                                Allen-Bradley hardware we used, with a PLC scan time around 10 ms. The inspection cycle itself runs
-                                in about five seconds per container, which keeps the QA cell from holding up the upstream work cells.
+                                The PLC sits at the centre of the control loop. NI Vision Builder runs an image inspection sequence
+                                on each container that arrives at the fixed overhead camera, publishes the results to a set of OPC
+                                tags, and the PLC reads those tags inside its scan cycle. Four tags carry the information the PLC
+                                needs: nut-only present, bolt-only present, completed assembly present, and lid present. Each one
+                                is a Boolean updated by the vision system. The ladder logic combines them into a pass/fail decision
+                                and drives one of three outputs on the 1746-OB16 output module: green for a fully correct package,
+                                yellow for the wrong assembly count without any loose parts in the image, and red whenever loose
+                                nuts or bolts are detected. A separate green output handles the lid pass.
                             </p>
                         </blockquote>
- 
+
                         <hr>
-                        <h3 class="major" style="text-decoration: underline;">Vision Inspection Logic</h3>
+                        <h3 class="major" style="text-decoration: underline;">Ladder Logic Design</h3>
                         <blockquote>
                             <p>
-                                The vision inspection is built on area-based classification. We captured reference images of every
-                                object the system could see, including a nut by itself, a bolt by itself in multiple orientations,
-                                and a completed nut-and-bolt assembly. From those reference areas we built detection ranges wide
-                                enough to handle orientation variation but narrow enough to keep loose parts and assemblies in
-                                separate buckets. The combined area of an assembly works out to roughly 1.5 to 2 times the area of
-                                a single component, which gave us enough margin that the system did not need recalibration every
-                                time a part shifted position.
+                                The ladder program is built around a small set of rungs, each responsible for one decision. The
+                                first rung captures the start signal: a physical Start Button on input I:1 OR'd with an HMI Start
+                                bit at B23:0, with a one-shot rising (OSR) instruction so a held button does not retrigger the
+                                inspection on every scan. That latches a Part-at-Camera bit (B23:2/15), which tells the vision
+                                system to capture and run an inspection.
                             </p>
                             <p>
-                                Originally we ran the inspection steps in parallel: the sequence would branch into separate paths
-                                for bolt, nut, and assembly checks, and once any path returned a result the cycle could end. That
-                                turned out to be a problem. A container could pass through without all the required conditions
-                                actually being evaluated, which introduced inconsistency that had nothing to do with image quality.
-                                We rearranged the inspection state machine to run in series instead, so every cycle steps through
-                                every check before the result is sent to the PLC. That single change cleaned up a category of
-                                false results immediately.
+                                The remaining rungs consume the OPC tags coming back. The Assembly Present rung drives the green
+                                output O:3 when the tag is true. The Bolt Present and Nut Present rungs, OR'd together, drive the
+                                red output, because any loose part has to dominate the other conditions. The yellow output is gated
+                                on Assembly Present being false AND both loose-part flags being false, so it only lights up when the
+                                count is wrong but nothing loose is in frame. The Lid Present rung drives its own indicator. A
+                                final rung clears the Vision Complete and Part-at-Camera bits so the next container can be
+                                inspected cleanly.
+                            </p>
+                            <p>
+                                There are two versions of the program in the project. One handles fastener detection only and was
+                                designed for a planned pre-lid station. The other is the combined version we actually demonstrated,
+                                which handles both fastener and lid checks inside a single ladder. The combined version uses an
+                                extra rung and one additional input tag, and forces a compromise on threshold tuning at the vision
+                                level because both checks share one image. The parts-only ladder is the cleaner architecture and is
+                                what I would build in a production system.
                             </p>
                         </blockquote>
- 
+
+                        <!-- IMAGE: Fig. A1 from the report. RSLogix 500 ladder logic for the COMBINED parts and lid detection (the final demoed version). -->
+                        <div class="col-12"><span class="image fit"><img src="images/QAplccombined.png" alt="RSLogix 500 ladder logic for the combined parts and lid detection program" /></span></div>
+                        <!-- IMAGE: Fig. A2 from the report. RSLogix 500 ladder logic for PARTS-ONLY detection (the cleaner pre-lid station version). -->
+                        <div class="col-12"><span class="image fit"><img src="images/QAplcpartsonly.png" alt="RSLogix 500 ladder logic for the parts-only inspection station" /></span></div>
+
+                        <hr>
+                        <h3 class="major" style="text-decoration: underline;">OPC Tag Integration</h3>
+                        <blockquote>
+                            <p>
+                                The bridge between the vision system and the PLC is OPC. From the PLC's side it is invisible at
+                                runtime; the tags appear in RSLogix 500 like any other addressable bit. What it actually does is
+                                decouple the two systems. NI Vision Builder writes its inspection results to the OPC server at
+                                whatever rate it completes inspections, and the PLC reads the most recent value on its own scan
+                                cycle. The two sides do not need to be synchronized, and either can be modified independently as
+                                long as the tag names stay stable. That separation mattered during development, because the vision
+                                system and the ladder logic went through several iterations in parallel and OPC kept the interface
+                                consistent while both sides moved underneath it.
+                            </p>
+                        </blockquote>
+
+                        <hr>
+                        <h3 class="major" style="text-decoration: underline;">Vision Subsystem as the PLC's Sensor</h3>
+                        <blockquote>
+                            <p>
+                                The vision system is effectively the PLC's sensor for this station. NI Vision Builder runs an
+                                area-based blob detection sequence on each captured image and classifies the contents against
+                                reference areas measured from sample images. A nut alone, a bolt alone in multiple orientations,
+                                and a completed assembly each have their own area range. Loose parts and assemblies are separated
+                                by a wide enough margin (assembly areas are roughly 1.5 to 2 times the area of a single component)
+                                that orientation variation does not push a part into the wrong bucket.
+                            </p>
+                            <p>
+                                One issue we hit early was that the vision state machine was set up to run its checks in parallel.
+                                A cycle could exit without evaluating every condition, which meant the PLC sometimes saw a stale or
+                                incomplete picture of the container. We rearranged the state machine to run in series, so every
+                                cycle steps through every check before results are published to OPC. The PLC's inputs became
+                                consistent immediately after that change.
+                            </p>
+                        </blockquote>
+
+                        <!-- IMAGE: Fig. A4 from the report. NI Vision Builder inspection state machine running in SERIES (the final, reliable version). -->
+                        <div class="col-12"><span class="image fit"><img src="images/QAinspectionseries.png" alt="NI Vision Builder inspection state machine running in series" /></span></div>
+                        <!-- IMAGE: Fig. A3 from the report. NI Vision Builder inspection state machine running in PARALLEL (the earlier problematic version). -->
+                        <div class="col-12"><span class="image fit"><img src="images/QAinspectionparallel.png" alt="Earlier NI Vision Builder state machine running checks in parallel" /></span></div>
                         <!-- IMAGE: Fig. B1 from the report. NI Vision Builder screen showing 3 assemblies detected with red bounding boxes. -->
-                        <div class="col-12"><span class="image fit"><img src="images/QAvisiondetection.png" alt="NI Vision Builder detecting three assembled nut-and-bolt pairs in a container" /></span></div>
-                        <!-- IMAGE: Fig. A3 from the report. NI Vision Builder inspection steps arranged in PARALLEL (the earlier, less reliable version). -->
-                        <div class="col-12"><span class="image fit"><img src="images/QAinspectionparallel.png" alt="NI Vision Builder inspection state machine running in parallel" /></span></div>
-                        <!-- IMAGE: Fig. A4 from the report. NI Vision Builder inspection steps arranged in SERIES (the final, reliable version). -->
-                        <div class="col-12"><span class="image fit"><img src="images/QAinspectionseries.png" alt="NI Vision Builder inspection state machine rearranged to run in series" /></span></div>
- 
+                        <div class="col-12"><span class="image fit"><img src="images/QAvisiondetection.png" alt="NI Vision Builder detecting three assembled nut-and-bolt pairs" /></span></div>
+
                         <hr>
-                        <h3 class="major" style="text-decoration: underline;">Lid Detection and the Marker Iteration</h3>
+                        <h3 class="major" style="text-decoration: underline;">Giving the PLC a Clean Lid Input</h3>
                         <blockquote>
                             <p>
-                                Lid detection ended up being the part of the project with the most iteration, and it is a useful
-                                story because the answer was not where we expected to find it. The first version used a small black
-                                dot on the lid as the marker. The system could see the dot, which confirmed that lid detection was
-                                possible at all, but it missed often whenever the lid was slightly off-centre or the dot rotated
-                                out of position.
+                                Lid detection took three iterations to land on something the PLC could rely on. The first marker
+                                was a small black dot on the lid. It worked in some cases but missed often when the lid shifted
+                                off-centre. The second marker was black tape around the rim. It was more visible, but the bolts in
+                                the assemblies are also black, and the area threshold settings needed for fastener detection meant
+                                the vision system could not reliably tell the rim apart from the bolt bodies. The result was an
+                                unreliable Lid Present tag, which the PLC had no way to compensate for, since ladder logic can only
+                                act on what its inputs tell it.
                             </p>
                             <p>
-                                The second version wrapped black tape around the rim of the lid instead. The thinking was that a
-                                ring is harder to miss than a dot and that it keeps the centre of the lid clear so the fasteners
-                                inside can still be inspected through it. In practice the ring made things worse. The bolts in this
-                                project are also black, and at the threshold settings we needed for area-based fastener detection,
-                                the system could not reliably tell the difference between a black-taped rim and a black bolt body.
-                                It was not a marginal problem. The interference was consistent enough that we could not ship that
-                                version.
-                            </p>
-                            <p>
-                                The third version was yellow tape around the rim. That sounds like a trivial change, but it solved
-                                the problem completely. Lid detection went from intermittent to a zero-failure rate across the test
-                                cycles we ran. The real lesson was that when the parts you are trying to ignore are dark, the marker
-                                colour matters far more than the marker shape. We had been iterating on geometry when the right
-                                variable to change was contrast.
+                                Switching the marker to yellow tape solved it completely. The contrast against the dark bolts was
+                                strong enough that lid detection became deterministic across our test cycles, and from the PLC's
+                                side the Lid Present tag became a clean Boolean we could trust. The lesson was an interface one:
+                                when an upstream sensor is unreliable, no amount of clever logic downstream will fix it. Fix the
+                                input first.
                             </p>
                         </blockquote>
- 
+
                         <!-- IMAGE: Fig. C3 from the report. Overhead photo of the yellow-tape lid sitting on the inspection station. -->
                         <div class="col-12"><span class="image fit"><img src="images/QAyellowlid.png" alt="Final yellow-tape lid marker on the inspection station" /></span></div>
- 
+
                         <hr>
-                        <h3 class="major" style="text-decoration: underline;">PLC Ladder Logic and OPC Integration</h3>
+                        <h3 class="major" style="text-decoration: underline;">Indicator Light Outputs</h3>
                         <blockquote>
                             <p>
-                                On the PLC side, the ladder logic in RSLogix 500 takes the vision outputs and drives the indicator
-                                lights. NI Vision Builder publishes one OPC tag per inspection condition: nut-only present,
-                                bolt-only present, completed assembly present, and lid present. The PLC reads those tags inside its
-                                scan cycle and decides what to display. Green turns on when the correct number of assemblies is
-                                detected and no loose parts are in the image. Yellow turns on when the count is wrong but nothing
-                                loose is present. Red turns on the moment any loose nut or bolt is detected, regardless of the
-                                assembly count, because that condition has to dominate the others.
+                                The operator interface is three tower lights driven directly by the PLC outputs on the 1746-OB16
+                                module. There is no HMI screen in this version. A stack light is glanceable from anywhere on the
+                                work cell floor, does not depend on a host computer being awake, and represents pass/fail in a way
+                                that does not require interpretation. Each light is energized by a single OTE coil, with no latching
+                                needed because the next inspection cycle overwrites the previous result automatically.
                             </p>
                             <p>
-                                We built two versions of the ladder logic. The first handles only fastener detection and was meant
-                                for the planned pre-lid inspection station. The second is the combined version we actually
-                                demonstrated, which handles both fastener and lid checks in the same program. The combined version
-                                is simpler to deploy but, as discussed below, it constrains how precisely each inspection can be
-                                tuned.
+                                A LabVIEW-based HMI was discussed at the concept stage and would have exposed richer information:
+                                which condition failed, package counts over a shift, fault history. We did not build it inside the
+                                project timeline, and it is the clearest extension on the PLC side of the system. The OPC layer
+                                already in place would carry the same tags to a LabVIEW front-end without changing the ladder.
                             </p>
                         </blockquote>
- 
-                        <!-- IMAGE: Fig. A2 from the report. RSLogix 500 ladder logic for PART DETECTION ONLY (pre-lid station version). -->
-                        <div class="col-12"><span class="image fit"><img src="images/QAplcpartsonly.png" alt="RSLogix 500 ladder logic for the parts-only inspection station" /></span></div>
-                        <!-- IMAGE: Fig. A1 from the report. RSLogix 500 ladder logic for the COMBINED parts and lid detection (final demoed version). -->
-                        <div class="col-12"><span class="image fit"><img src="images/QAplccombined.png" alt="RSLogix 500 ladder logic for the combined parts and lid detection program" /></span></div>
- 
+
+                        <!-- IMAGE: Fig. B2 from the report. Red tower light photo, triggered by loose parts. -->
+                        <div class="col-12"><span class="image fit"><img src="images/QAredlight.png" alt="Red indicator output triggered by the loose-parts rung" /></span></div>
+                        <!-- IMAGE: Fig. B3 from the report. Yellow tower light photo, triggered by incorrect assembly count. -->
+                        <div class="col-12"><span class="image fit"><img src="images/QAyellowlight.png" alt="Yellow indicator output triggered by the incorrect-count rung" /></span></div>
+                        <!-- IMAGE: Fig. B4 from the report. Green tower light photo, triggered by a fully correct package. -->
+                        <div class="col-12"><span class="image fit"><img src="images/QAgreenlight.png" alt="Green indicator output triggered by a fully correct package" /></span></div>
+                        <!-- IMAGE: Fig. B5 from the report. Green light photo during successful lid detection. -->
+                        <div class="col-12"><span class="image fit"><img src="images/QAlidgreen.png" alt="Green indicator output during a successful lid detection cycle" /></span></div>
+
                         <hr>
-                        <h3 class="major" style="text-decoration: underline;">Indicator Light Interface</h3>
+                        <h3 class="major" style="text-decoration: underline;">Tradeoff: One Program vs. Two</h3>
                         <blockquote>
                             <p>
-                                The operator interface is intentionally simple. Three coloured tower lights driven directly by the
-                                PLC, no HMI screen. The reasoning was that an indicator stack gives unambiguous, glanceable feedback
-                                from anywhere on the work cell floor and does not depend on any host computer being awake. A
-                                LabVIEW HMI was discussed during concept generation and would have added richer information like
-                                fault breakdowns, package counts, and historical trends. We chose not to build it inside this
-                                project's timeline, and it is the most obvious next step on the operator-experience side.
+                                The honest weakness in the demonstrated system is that fastener detection and lid detection share
+                                one inspection cycle, which forces one PLC program to handle both. The better architecture is two
+                                separate programs at two physical stations: a pre-lid station running the parts-only ladder, and an
+                                end-of-line station running a lid-only ladder. Each program is simpler, each can be debugged in
+                                isolation, and the threshold settings on the vision side can be tuned for one task instead of
+                                compromising between two. We chose the combined approach to ship the demo end-to-end, but the
+                                two-program architecture is the cleaner long-term design and is the first thing I would change in
+                                a revision.
                             </p>
                         </blockquote>
- 
-                        <!-- IMAGE: Fig. B2 from the report. Red light photo, taken at the actual PLC station, when loose parts are detected. -->
-                        <div class="col-12"><span class="image fit"><img src="images/QAredlight.png" alt="Red indicator light triggered when loose nuts or bolts are detected" /></span></div>
-                        <!-- IMAGE: Fig. B3 from the report. Yellow light photo when the assembly count is wrong but no loose parts are present. -->
-                        <div class="col-12"><span class="image fit"><img src="images/QAyellowlight.png" alt="Yellow indicator light triggered when assembly count is incorrect" /></span></div>
-                        <!-- IMAGE: Fig. B4 from the report. Green light photo when correct number of assemblies and no loose parts. -->
-                        <div class="col-12"><span class="image fit"><img src="images/QAgreenlight.png" alt="Green indicator light triggered when package contents are correct" /></span></div>
-                        <!-- IMAGE: Fig. B5 from the report. Green light photo with the lid inspection screen visible, showing successful lid detection. -->
-                        <div class="col-12"><span class="image fit"><img src="images/QAlidgreen.png" alt="Green indicator light during a successful lid detection cycle" /></span></div>
- 
-                        <hr>
-                        <h3 class="major" style="text-decoration: underline;">Tradeoff: One Station vs. Two</h3>
-                        <blockquote>
-                            <p>
-                                The honest weakness in the final demonstrated system is that fastener detection and lid detection
-                                share the same inspection process. The better architecture, which we designed but did not build
-                                inside the project window, is a two-stage QA setup. The first station would inspect the package
-                                before the lid is placed and focus only on assembly count and loose-part detection. The second
-                                station, at the very end of the work cell, would only check for lid presence. Splitting them lets
-                                each station use threshold settings tuned for one task instead of a compromise that has to serve
-                                both, and it removes any possibility of the lid marker interfering with fastener detection in the
-                                first place.
-                            </p>
-                            <p>
-                                We made the call to ship the combined version because it let us finish the cross-group integration
-                                and get a full pass-fail demo running end to end. That was the right call for the deliverable, but
-                                the two-stage approach is the cleaner long-term design and is the first thing I would change in any
-                                next revision.
-                            </p>
-                        </blockquote>
- 
-                        <hr>
-                        <h3 class="major" style="text-decoration: underline;">Concepts We Looked At But Did Not Build</h3>
-                        <blockquote>
-                            <p>
-                                A few other ideas got prototyped or evaluated and then set aside. Weight-based verification using a
-                                digital scale under the container was tested as a possible redundant check, and we collected baseline
-                                masses for the empty container, individual fasteners, and a completed package. The reason it stayed
-                                a backup rather than a primary method is the same one that ruled it out at the concept stage: weight
-                                alone cannot tell three good assemblies apart from a heavier-than-expected mix of loose parts. It is
-                                a useful sanity check, not a verification method on its own.
-                            </p>
-                            <p>
-                                A LabVIEW HMI was the other obvious extension. It would have made the inspection results far more
-                                informative than three lights can be, and it would have given the operator a way to drill into which
-                                specific condition failed. Within the project timeline we chose simple indicator lights and prioritized
-                                getting the vision-to-PLC chain working reliably.
-                            </p>
-                        </blockquote>
- 
-                        <!-- IMAGE: Fig. B7 from the report. Photo of a container sitting on the digital scale during weight-based testing. -->
-                        <div class="col-12"><span class="image fit"><img src="images/QAweighing.png" alt="Container being weighed on a digital scale during the weight-based verification concept testing" /></span></div>
- 
+
                         <hr>
                         <h3 class="major" style="text-decoration: underline;">Results</h3>
                         <blockquote>
                             <p>
-                                Under the controlled lab conditions of the final demonstration, the system met its core
-                                requirements. Assembly detection was reliable once the inspection steps ran in series, the
-                                area-based thresholds cleanly separated assembled fasteners from loose ones across orientation
-                                variation, and no false acceptances of loose parts were observed in our reference test set. Lid
-                                detection became fully consistent once the yellow-tape marker replaced the earlier black-tape and
-                                dot versions. OPC communication between Vision Builder and the PLC worked as expected, with
-                                inspection results reaching the correct ladder rungs and the indicator lights responding inside one
-                                additional PLC scan after each tag update.
+                                Under the controlled lab conditions of the final demonstration, the PLC consistently read the
+                                correct vision outputs over OPC and drove the correct indicator output on every test container.
+                                Total latency from inspection completion to operator feedback came in under 25 ms, well below the
+                                roughly five-second-per-container pace the line ran at. Once the inspection state machine was
+                                running in series and the lid marker was yellow tape, the PLC's inputs were clean enough that the
+                                ladder logic never produced an incorrect output that was the PLC's fault.
                             </p>
                             <p>
-                                The system's main limitations are the ones imposed by relying on thresholding and fixed-camera
-                                imaging. Performance is sensitive to lighting, background, and camera position. A less controlled
-                                environment would require either more robust image processing or a more rigid imaging setup. That
-                                is a known property of this approach, not a surprise from the build.
+                                The remaining limitation is upstream. Vision performance degrades if lighting, camera position, or
+                                background change, which means the inputs the PLC sees are only as reliable as the imaging
+                                conditions. The control side is solid; the sensing side is the part that would need work in a less
+                                controlled environment.
                             </p>
                         </blockquote>
- 
+
                         <hr>
                         <h3 class="major" style="text-decoration: underline;">Future Work</h3>
                         <blockquote>
                             <p>
-                                The clearest next step is to actually build the two-stage QA architecture, with a pre-lid station
-                                handling fastener inspection on its own optimized thresholds and a final station handling lid
-                                detection in isolation. Beyond that, a more rigid camera mount and a controlled lighting enclosure
-                                would reduce the recalibration sensitivity that fixed-threshold vision systems always carry. A
-                                LabVIEW HMI would replace the three indicator lights with richer fault breakdowns, package counts,
-                                and trend data, and a weight-based redundant check could sit underneath the vision system as a
-                                cross-validation layer for added confidence.
+                                The clearest PLC-side extensions are a LabVIEW HMI that exposes internal state and fault breakdowns
+                                over the same OPC layer the vision system already uses, and a redundant weight-check input that
+                                would give the ladder logic a second independent signal to cross-validate against. Beyond those,
+                                splitting the system into two stations with their own dedicated PLC programs is the architecture
+                                upgrade I would prioritize, since it removes the threshold compromise that the combined inspection
+                                forces today.
                             </p>
                         </blockquote>
- 
+
                         <hr>
                         <h3 class="major" style="text-decoration: underline;">Conclusion</h3>
                         <blockquote>
                             <p>
-                                The QA subsystem ended up being a good lesson in the difference between picking the right algorithm
-                                and picking the right physical setup. The vision and PLC logic were not the hard part. The hard part
-                                was getting the imaging conditions stable enough that the algorithm could do its job, and noticing
-                                that the right fix for unreliable lid detection was a colour change rather than a shape change. We
-                                shipped a working integrated demo that distinguishes assemblies from loose parts, detects a lid
-                                reliably, and communicates a clear pass-fail decision through industrial hardware. We also walked
-                                away with a clear picture of the cleaner architecture we would build next time, which on balance is
-                                probably more useful than if everything had gone right on the first try.
+                                The PLC was the right platform for this work, and the system holds together as much because of the
+                                boring industrial fundamentals as anything else: deterministic scan cycles, clean digital outputs,
+                                OPC isolating the vision side from the control side, and ladder logic simple enough to read in one
+                                pass. The interesting failure modes all turned out to be at the input boundary, not inside the PLC
+                                itself, which is a good sign for the control design. What I came away with is a much better
+                                intuition for how a PLC's view of the world is shaped by what its sensors give it, and for why
+                                splitting an integrated cell into well-bounded, single-purpose programs is almost always worth the
+                                extra setup time.
                             </p>
                         </blockquote>
- 
+
                     </div>
                 </div>
             </section>
- 
+
             <footer>
                 <div class="major">
                     <h2><a href="#">Get In Touch</a></h2>
                     <p>If you'd like to know more about my work or discuss potential collaborations, feel free to contact me via email or phone.</p>
                 </div>
             </footer>
- 
+
         </div>
- 
+
         <!-- Footer -->
         <footer id="footer">
             <section>
@@ -355,7 +329,7 @@
                     </ul>
                 </form>
             </section>
- 
+
             <section class="split contact">
                 <section class="alt">
                     <h3>Address</h3>
@@ -378,14 +352,14 @@
                 </section>
             </section>
         </footer>
- 
+
         <!-- Copyright -->
         <div id="copyright">
             <ul><li>&copy; Atrin</li><li>Portfolio</li></ul>
         </div>
- 
+
     </div>
- 
+
     <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery.scrollex.min.js"></script>
