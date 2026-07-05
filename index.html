@@ -1,314 +1,197 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Atrin Portfolio</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
 
-<html>
-	<head>
-		<title>Atrin Portfolio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+	<!-- Nav -->
+	<nav class="nav">
+		<div class="nav-inner">
+			<a href="index.html" class="logo">My Portfolio</a>
+			<button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+			<ul class="nav-links">
+				<li class="active"><a href="index.html">Home</a></li>
+				<li><a href="Resume.html">Resume</a></li>
+				<li><a href="Project8.html">GNSS</a></li>
+				<li><a href="Project3.html">PLC</a></li>
+				<li><a href="Project7.html">Rocketry</a></li>
+				<li><a href="Project6.html">Baja SAE</a></li>
+				<li><a href="Project5.html">RC Car</a></li>
+				<li><a href="Project2.html">HoopNet</a></li>
+				<li><a href="Project4.html">PCB Design</a></li>
+				<li><a href="Project1.html">Clinic Website</a></li>
+				<li><a href="https://www.linkedin.com/in/atrin-shahrokh" target="_blank" class="nav-in" aria-label="LinkedIn">in</a></li>
+			</ul>
+		</div>
+	</nav>
 
-		<!-- Wrapper -->
-			<div id="wrapper" class="fade-in">
+	<!-- Intro / Hero -->
+	<div class="hero" id="intro">
+		<svg class="hero-traces" width="620" height="180" viewBox="0 0 620 180" aria-hidden="true">
+			<polyline points="60,20 300,20 330,50 620,50" fill="none" stroke="#00ff9f" stroke-opacity=".35" stroke-width="1.5"></polyline>
+			<polyline points="90,90 330,90 360,120 620,120" fill="none" stroke="#00ff9f" stroke-opacity=".2" stroke-width="1.5"></polyline>
+			<polyline points="140,160 400,160 430,175 620,175" fill="none" stroke="#00ff9f" stroke-opacity=".12" stroke-width="1.5"></polyline>
+			<circle cx="60" cy="20" r="4" fill="none" stroke="#00ff9f" stroke-opacity=".6"></circle>
+			<circle cx="90" cy="90" r="4" fill="none" stroke="#00ff9f" stroke-opacity=".4"></circle>
+			<circle cx="140" cy="160" r="4" fill="none" stroke="#00ff9f" stroke-opacity=".3"></circle>
+		</svg>
+		<div class="kicker">Electrical Engineering</div>
+		<h1>Welcome to my Portfolio<br /><span class="hl">I'm Atrin Shahrokh</span></h1>
+		<p>As an Electrical Engineer, this portfolio serves as a testament to my passion, skills, and dedication, showcasing a diverse range of projects that demonstrate my abilities.</p>
+		<div><a href="#header" class="btn">View My Work</a></div>
+	</div>
 
-				<!-- Intro -->
-					<div id="intro">
-						<h1>Welcome to my Portfolio<br />
-							I'm Atrin Shahrokh</h1>
-						<p>As an Electrical Engineer, this portfolio serves as a testament to my passion, skills, and dedication
-							 <br /> skills, and dedication, showcasing a diverse range of projects that demonstrate my abilities. </p>
-						<ul class="container">
-							<li><a href="#header" class="button ">View My Work</a></li>
-						</ul>
-					</div>
+	<div class="trace-divider" id="header" aria-hidden="true">
+		<svg viewBox="0 0 1200 26" preserveAspectRatio="none"><polyline points="0,13 380,13 400,4 700,4 720,13 1130,13" fill="none" stroke="#00ff9f" stroke-opacity=".45" stroke-width="1.5"></polyline><circle cx="1136" cy="13" r="4" fill="#00ff9f"></circle><rect x="1160" y="9" width="8" height="8" fill="none" stroke="#00ff9f" stroke-opacity=".6"></rect></svg>
+	</div>
 
-				<!-- Header -->
-					<header id="header">
-						<a href="index.html" class="logo">My Portfolio</a>
-					</header>
+	<!-- Featured -->
+	<section class="section">
+		<article class="featured fade">
+			<span class="date-chip">Welcome</span>
+			<h2><a href="#">Please take a look around!</a></h2>
+			<p>I'm an Electrical Engineer actively expanding my knowledge across the field, picking up new subjects across analog, RF, embedded, and power as I go. I'm open to work in any EE specialization, whether that's design, testing, consulting, or management, and I'm comfortable moving between them. Projects I've worked on include a dual-band GNSS RF front-end for autonomous vehicles, rocketry avionics, motorsports electronics, and embedded/PCB design work on the side. If you're building something interesting, I'd like to hear from you.</p>
+		</article>
+	</section>
 
-				<!-- Nav -->
-					<nav id="nav">
-						<ul class="links">
-							<li class="active"><a href="index.html">Home</a></li>
-							<li><a href="Resume.html">Resume</a></li>
-							<li><a href="Project8.html">GNSS</a></li>
-							<li><a href="Project3.html">PLC</a></li>
-							<li><a href="Project7.html">Rocketry</a></li>
-							<li><a href="Project6.html">Baja SAE</a></li>
-							<li><a href="Project5.html">RC Car</a></li>
-							<li><a href="Project2.html">HoopNet</a></li>
-							<li><a href="Project4.html">PCB Design</a></li>
-							<li><a href="Project1.html">Clinic Website</a></li>
-							<!--<li><a href="elements.html">Elements </a></li>
-							<li><a href="generic.html">Generic</a></li>-->
-						</ul>
-						<ul class="icons">
-							<li><a href="https://www.linkedin.com/in/atrin-shahrokh "  target="_blank" class="icon brands fa-linkedin"><span class="label">linkedin</span></a></li>
-						</ul>
-					</nav>
+	<!-- Projects -->
+	<section class="section">
+		<div class="section-label">01/ Projects</div>
+		<div class="cards">
 
-				<!-- Main -->
-					<div id="main">
+			<article class="card fade">
+				<a href="https://www.linkedin.com/in/atrin-shahrokh" target="_blank" class="card-img"><img src="images/Linkedin.png" alt="" /></a>
+				<div class="card-body">
+					<div class="card-meta"><span>2026</span><span class="ref">IN</span></div>
+					<h2><a href="https://www.linkedin.com/in/atrin-shahrokh" target="_blank">linkedin Page</a></h2>
+					<p>Unlock a gateway to an enriching odyssey showcasing my remarkable journey and extensive qualifications as a electrical engineering student at Western University by simply clicking the link to my LinkedIn page, where you will delve into a treasure trove of transformative experiences, remarkable milestones, and exceptional projects, illuminating my unwavering dedication, passion for technology, and unwavering commitment to making a profound impact in the digital realm.</p>
+					<div class="card-actions"><a href="https://www.linkedin.com/in/atrin-shahrokh" target="_blank" class="btn">Learn More</a></div>
+				</div>
+			</article>
 
-						<!-- Featured Post -->
-							<article class="post featured">
-								<header class="major">
-									<span class="date">Welcome</span>
-									<h2><a href="#"> Please take a look around!</a></h2>
-									<p>I'm an Electrical Engineer actively expanding my knowledge across the field, picking up new subjects across analog, RF, embedded, and power as I go. 
-										I'm open to work in any EE specialization, whether that's design, testing, consulting, or management, and I'm comfortable moving between them. 
-										Projects I've worked on include a dual-band GNSS RF front-end for autonomous vehicles, rocketry avionics, motorsports electronics, and embedded/PCB design work on 
-										the side. If you're building something interesting, I'd like to hear from you.</p>
-								</header>
-								<!--<a href="#" class="image main"><img src="images/pic01.jpg" alt="" /></a>
-								<ul class="actions special">
-									<li><a href="#" class="button large">Full Story</a></li> -->
-								</ul>
-							</article>
+			<article class="card fade">
+				<a href="Project8.html" class="card-img"><img src="images/GNSSsch.png" alt="" /></a>
+				<div class="card-body">
+					<div class="card-meta"><span>2026</span><span class="ref">P8</span></div>
+					<h2><a href="Project8.html">GNSS Antenna</a></h2>
+					<p>As part of my Electrical Engineering capstone project, I designed and analysed a compact dual-band GNSS antenna system operating at the L1 and L5 frequencies for autonomous vehicle applications. The project involved RF and antenna design, ADS simulation, S-parameter and noise figure analysis, and PCB layout, with a strong focus on system-level performance and integration. This work strengthened my understanding of RF front-end design, antenna optimisation, and real-world constraints in high-frequency systems.</p>
+					<div class="card-actions"><a href="Project8.html" class="btn">Learn More</a></div>
+				</div>
+			</article>
 
-						<!-- Posts -->
-							<section class="posts">
-								<article>
-									<header>
-										<span class="date">2026</span>
-										<h2><a href="https://www.linkedin.com/in/atrin-shahrokh "  target="_blank">linkedin Page</a></h2>
-									</header>
-									<a href="https://www.linkedin.com/in/atrin-shahrokh "  target="_blank" class="image fit"><img src="images/Linkedin.png" alt="" /></a>
-									<p>Unlock a gateway to an enriching odyssey showcasing my remarkable journey and extensive qualifications as a electrical engineering student at Western University by simply clicking the link to my LinkedIn page, where you will delve into a treasure trove of transformative experiences, remarkable milestones, and exceptional projects, illuminating my unwavering dedication, passion for technology, and unwavering commitment to making a profound impact in the digital realm.</p>
-									<ul class="actions special">
-										<li><a href="https://www.linkedin.com/in/atrin-shahrokh "  target="_blank" class="button">Learn More</a></li>
-									</ul>
-								</article>
-										<article>
-									<header>
-										<span class="date">2026</span>
-										<h2><a href="Project8.html"><br />GNSS Antenna</a></h2>
-									</header>
-									<a href="Project8.html" class="image fit"><img src="images/GNSSsch.png" alt="" /></a>
-									<p>As part of my Electrical Engineering capstone project, I designed and analysed a compact dual-band GNSS antenna system operating at the L1 and L5 frequencies for autonomous vehicle applications. The project involved RF and antenna design, ADS simulation, S-parameter and noise figure analysis, and PCB layout, with a strong focus on system-level performance and integration. This work strengthened my understanding of RF front-end design, antenna optimisation, and real-world constraints in high-frequency systems.
-									</p>
-									<ul class="actions special">
-										<li><a href="Project8.html" class="button">Learn More</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										<span class="date">2026</span>
-										<h2><a href="Project3.html">PLC Control System for an Automated Packaging Quality Assurance<br />
-										</h2>
-									</header>
-									<a href="Project3.html" class="image fit"><img src="images/QAlidgreen.png" alt="" /></a>
-									<p>As part of my fourth-year robotics and manufacturing automation course, my team and I built the PLC control system for the final quality assurance station of an automated nut-and-bolt packaging line. The project involved ladder logic design in RSLogix 500, OPC tag integration with NI Vision Builder, scan cycle and latency planning, and operator interface design through PLC-driven indicator lights. This work strengthened my understanding of industrial control architecture, deterministic scan-cycle behaviour, and how clean sensor interfaces shape every downstream control decision.</p>
-									<ul class="actions special">
-										<li><a href="Project3.html" class="button">Learn More</a></li>
-									</ul>
-								</article>
-								
-								<article>
-									<header>
-										<span class="date">2026</span>
-										<h2><a href="Project6.html"><br />Western Baja SAE Racing Club</a></h2>
-									</header>
-									<a href="Project6.html" class="image fit"><img src="images/Bajacar.png" alt="" /></a>
-									<p>As a member of the Western Baja SAE Racing Club, I contributed to the Driver Systems team, focusing on the car's electronic systems. My work involved designing and implementing the wiring needed to power various components of the vehicle, ensuring reliable connectivity throughout the car. Additionally, I developed systems to monitor live data from the car during motion, allowing us to assess performance, track the vehicle's health, and quickly identify potential issues. This hands-on experience honed my skills in electronics, teamwork, and problem-solving while contributing to the club's mission of building competitive, high-performance vehicles.
-									</p>
-									<ul class="actions special">
-										<li><a href="Project6.html" class="button">Learn More</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										<span class="date">2026</span>
-										<h2><a href="Project7.html"><br />Western Rocketry Club</a></h2>
-									</header>
-									<a href="Project7.html" class="image fit"><img src="images/Rocket.png" alt="" /></a>
-									<p>As a member of the Western Rocketry Club, I contributed to the design and implementation of the rocket’s electrical and wiring systems. My work involved developing wiring harnesses, integrating avionics components, and supporting system-level electrical integration to ensure reliable operation during testing and launch. I also assisted with hands-on assembly and troubleshooting throughout the build process. This experience strengthened my understanding of embedded systems, electrical integration in high-stress environments, and collaborative engineering within a multidisciplinary team.
-									</p>
-									<ul class="actions special">
-										<li><a href="Project7.html" class="button">Learn More</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										<span class="date">2024</span>
-										<h2><a href="Project5.html"><br />
-										Environmental Monitoring RC Car</a></h2>
-									</header>
-									<a href="Project5.html" class="image fit"><img src="images/rc-car.png" alt="" /></a>
-									<p>This project details the development and deployment of a remote-controlled (RC) environmental monitoring car tailored for hard-to-reach areas, aiming to provide insights into environmental conditions where accessibility is limited. The primary objective was to design an RC vehicle equipped with sensors for data collection, emphasizing wireless communication for remote operation.
-									</p>
-									<ul class="actions special">
-										<li><a href="Project5.html" class="button">Learn More</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										<span class="date">2022</span>
-										<h2><a href="Project2.html"><br />
-										Hoop Net</a></h2>
-									</header>
-									<a href="Project2.html" class="image fit"><img src="images/HoopNet.png" alt="" /></a>
-									<p>During my design class as an engineering student, I had the opportunity to collaborate with two other students on a project for Urban Roots London, a local farming company. Our objective was to automate their existing humidity control systems, specifically their hoop house lift-sides and fans, with the aim of eliminating the need for manual intervention. Through this project, I was able to apply my engineering knowledge to a real-world problem and work alongside my peers to develop an innovative solution.</p>
-									<ul class="actions special">
-										<li><a href="Project2.html" class="button">Learn More</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										<span class="date">2024</span>
-										<h2><a href="Project4.html"><br />
-										PCB Design</a></h2>
-									</header>
-									<a href="Project4.html" class="image fit"><img src="images/PCB.png" alt="" /></a>
-									<p>In one of my lab courses, I had the opportunity to design and build a PCB. This process involved performing calculations for the circuit components, creating a schematic, and then translating that schematic into a PCB layout using Eagle CAD software. After designing the board, it was printed, and I had the chance to attach actual components like resistors, capacitors, and op-amps using a soldering machine. This entire experience was incredibly enriching, providing me with valuable hands-on experience in PCB design and assembly, a skill I found both challenging and rewarding.</p>									<ul class="actions special">
-										<li><a href="Project4.html" class="button">Learn More</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										<span class="date">2022</span>
-										<h2><a href="Project1.html"><br />
-										Clinic website</a></h2>
-									</header>
-									<a href="Project1.html" class="image fit"><img src="images/websitepic.png" alt="" /></a>
-									<p>As a beginner in web development, I was tasked with building a website for a physiotherapy clinic using only HTML. Despite having no prior experience in building a 
-										website, I took on the challenge and learned a lot throughout the process. As I coded the website, I researched different HTML tags, learned how to structure a webpage,
-										 and experimented with different styles and layouts. I encountered several challenges, such as figuring out how to create a responsive design that would work on different 
-										 screen sizes, but I persevered and was able to overcome them with the help of online resources and tutorials. Overall, building the website for the physiotherapy clinic
-										  was a valuable learning experience that helped me improve my coding skills and gain confidence in my ability to tackle new challenges.</p>
-									<ul class="actions special">
-										<li><a href="Project1.html" class="button">Learn More</a></li>
-									</ul>
-								</article>
-								
-								<!--<article>
-									<header>
-										<span class="date">April 11, 2017</span>
-										<h2><a href="#">Odio magna<br />
-										sed consectetur</a></h2>
-									</header>
-									<a href="#" class="image fit"><img src="images/pic06.jpg" alt="" /></a>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
-									<ul class="actions special">
-										<li><a href="#" class="button">Full Story</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										<span class="date">April 7, 2017</span>
-										<h2><a href="#">Augue lorem<br />
-										primis vestibulum</a></h2>
-									</header>
-									<a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
-									<ul class="actions special">
-										<li><a href="#" class="button">Full Story</a></li>
-									</ul>
-								</article> -->
-							</section>
+			<article class="card fade">
+				<a href="Project3.html" class="card-img"><img src="images/QAlidgreen.png" alt="" /></a>
+				<div class="card-body">
+					<div class="card-meta"><span>2026</span><span class="ref">P3</span></div>
+					<h2><a href="Project3.html">PLC Control System for an Automated Packaging Quality Assurance</a></h2>
+					<p>As part of my fourth-year robotics and manufacturing automation course, my team and I built the PLC control system for the final quality assurance station of an automated nut-and-bolt packaging line. The project involved ladder logic design in RSLogix 500, OPC tag integration with NI Vision Builder, scan cycle and latency planning, and operator interface design through PLC-driven indicator lights. This work strengthened my understanding of industrial control architecture, deterministic scan-cycle behaviour, and how clean sensor interfaces shape every downstream control decision.</p>
+					<div class="card-actions"><a href="Project3.html" class="btn">Learn More</a></div>
+				</div>
+			</article>
 
-						<!-- Footer -->
-							<footer>
-								<div class="major">
-									<!--<a href="#" class="previous">Prev</a>-->
-									<h2><a href="#">Get In Touch</a></h2>
-									<p>If you're interested in my skills and experience, please don't hesitate to get in touch with me via email or cell.
-										 I would be happy to answer any questions you may have about my work history or discuss potential employment opportunities.
-										  I am highly motivated, reliable, and always eager to learn new things, which I believe would make me a valuable addition to any team.
-										</p>
-								</div>
-							</footer>
+			<article class="card fade">
+				<a href="Project6.html" class="card-img"><img src="images/Bajacar.png" alt="" /></a>
+				<div class="card-body">
+					<div class="card-meta"><span>2026</span><span class="ref">P6</span></div>
+					<h2><a href="Project6.html">Western Baja SAE Racing Club</a></h2>
+					<p>As a member of the Western Baja SAE Racing Club, I contributed to the Driver Systems team, focusing on the car's electronic systems. My work involved designing and implementing the wiring needed to power various components of the vehicle, ensuring reliable connectivity throughout the car. Additionally, I developed systems to monitor live data from the car during motion, allowing us to assess performance, track the vehicle's health, and quickly identify potential issues. This hands-on experience honed my skills in electronics, teamwork, and problem-solving while contributing to the club's mission of building competitive, high-performance vehicles.</p>
+					<div class="card-actions"><a href="Project6.html" class="btn">Learn More</a></div>
+				</div>
+			</article>
 
-					</div>
+			<article class="card fade">
+				<a href="Project7.html" class="card-img"><img src="images/Rocket.png" alt="" /></a>
+				<div class="card-body">
+					<div class="card-meta"><span>2026</span><span class="ref">P7</span></div>
+					<h2><a href="Project7.html">Western Rocketry Club</a></h2>
+					<p>As a member of the Western Rocketry Club, I contributed to the design and implementation of the rocket&rsquo;s electrical and wiring systems. My work involved developing wiring harnesses, integrating avionics components, and supporting system-level electrical integration to ensure reliable operation during testing and launch. I also assisted with hands-on assembly and troubleshooting throughout the build process. This experience strengthened my understanding of embedded systems, electrical integration in high-stress environments, and collaborative engineering within a multidisciplinary team.</p>
+					<div class="card-actions"><a href="Project7.html" class="btn">Learn More</a></div>
+				</div>
+			</article>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<section>
-							<form action="https://formspree.io/f/xeqwbylk" method="post">
-								<div class="fields">
-								  <div class="field">
-									<label for="name">Name</label>
-									<input type="text" name="name" id="name" />
-								  </div>
-								  <div class="field">
-									<label for="email">Email</label>
-									<input type="text" name="email" id="email" />
-								  </div>
+			<article class="card fade">
+				<a href="Project5.html" class="card-img"><img src="images/rc-car.png" alt="" /></a>
+				<div class="card-body">
+					<div class="card-meta"><span>2024</span><span class="ref">P5</span></div>
+					<h2><a href="Project5.html">Environmental Monitoring RC Car</a></h2>
+					<p>This project details the development and deployment of a remote-controlled (RC) environmental monitoring car tailored for hard-to-reach areas, aiming to provide insights into environmental conditions where accessibility is limited. The primary objective was to design an RC vehicle equipped with sensors for data collection, emphasizing wireless communication for remote operation.</p>
+					<div class="card-actions"><a href="Project5.html" class="btn">Learn More</a></div>
+				</div>
+			</article>
 
-								  <div class="field">
-									<label for="message">Message</label>
-									<textarea name="message" id="message" rows="3"></textarea>
-								  </div>
-								</div>
-								<ul class="actions">
-								  <li><input type="submit" value="Send Message" /></li>
-								</ul>
-							  </form>
+			<article class="card fade">
+				<a href="Project2.html" class="card-img"><img src="images/HoopNet.png" alt="" /></a>
+				<div class="card-body">
+					<div class="card-meta"><span>2022</span><span class="ref">P2</span></div>
+					<h2><a href="Project2.html">Hoop Net</a></h2>
+					<p>During my design class as an engineering student, I had the opportunity to collaborate with two other students on a project for Urban Roots London, a local farming company. Our objective was to automate their existing humidity control systems, specifically their hoop house lift-sides and fans, with the aim of eliminating the need for manual intervention. Through this project, I was able to apply my engineering knowledge to a real-world problem and work alongside my peers to develop an innovative solution.</p>
+					<div class="card-actions"><a href="Project2.html" class="btn">Learn More</a></div>
+				</div>
+			</article>
 
-						<!-- <script src="https://smtpjs.com/v3/smtp.js"></script>
-							<script>
-								function sendEmail(){
-									Email.send({
-										Host : "smtp.gmail.com",
-										Username : "shahrokhatrin@gmail.com",
-										Password : "$Toowong10",
-										To : 'shahrokhatrin@gmail.com.com',
-										From : document.getElementById("email").value,
-										Subject : "New Contact Form Enquiry",
-										Body : "Name: " + document.getElementById("name").value
-										+ "<br> Email: " + document.getElementById("email").value
-										+ "<br> Message: " + document.getElementById("message").value
-									}).then(
-									  message => alert("Message Sent Succesfully")
-									);
-								}
-							</script> -->
-							  
+			<article class="card fade">
+				<a href="Project4.html" class="card-img"><img src="images/PCB.png" alt="" /></a>
+				<div class="card-body">
+					<div class="card-meta"><span>2024</span><span class="ref">P4</span></div>
+					<h2><a href="Project4.html">PCB Design</a></h2>
+					<p>In one of my lab courses, I had the opportunity to design and build a PCB. This process involved performing calculations for the circuit components, creating a schematic, and then translating that schematic into a PCB layout using Eagle CAD software. After designing the board, it was printed, and I had the chance to attach actual components like resistors, capacitors, and op-amps using a soldering machine. This entire experience was incredibly enriching, providing me with valuable hands-on experience in PCB design and assembly, a skill I found both challenging and rewarding.</p>
+					<div class="card-actions"><a href="Project4.html" class="btn">Learn More</a></div>
+				</div>
+			</article>
 
-						</section>
-						<section class="split contact">
-							<section class="alt">
-								<h3>Address</h3>
-								<p>Toronto, Ontario<br />
-								Canada</p>
-							</section>
-							<section>
-								<h3>Phone</h3>
-								<p><a href="#">(647) 515-1034</a></p>
-							</section>
-							<section>
-								<h3>Email</h3>
-								<p><a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSMVxZPtJQssRZNTlZVvGmxsFqFCSqRPTSmXZBhCRkfKhxHmBkvnQQLGbWfBXPBqGlDVkrpp" target="_blank">shahrokhatrin@gmail.com</a></p>
-							</section>
-							<section>
-								<h3>Social</h3>
-								<ul class="icons alt">
-									<li><a href="https://www.linkedin.com/in/atrin-shahrokh"  target="_blank" class="icon brands fa-linkedin"><span class="label">linkedin</span></a></li>
-									<!-- <li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li> -->
-								</ul>
-							</section>
-						</section>
-					</footer>
+			<article class="card fade">
+				<a href="Project1.html" class="card-img"><img src="images/websitepic.png" alt="" /></a>
+				<div class="card-body">
+					<div class="card-meta"><span>2022</span><span class="ref">P1</span></div>
+					<h2><a href="Project1.html">Clinic website</a></h2>
+					<p>As a beginner in web development, I was tasked with building a website for a physiotherapy clinic using only HTML. Despite having no prior experience in building a website, I took on the challenge and learned a lot throughout the process. As I coded the website, I researched different HTML tags, learned how to structure a webpage, and experimented with different styles and layouts. I encountered several challenges, such as figuring out how to create a responsive design that would work on different screen sizes, but I persevered and was able to overcome them with the help of online resources and tutorials. Overall, building the website for the physiotherapy clinic was a valuable learning experience that helped me improve my coding skills and gain confidence in my ability to tackle new challenges.</p>
+					<div class="card-actions"><a href="Project1.html" class="btn">Learn More</a></div>
+				</div>
+			</article>
 
-				<!-- Copyright -->
-					<div id="copyright">
-						<ul><li>&copy; Atrin</li><li>Portfolio</a></li></ul>
-					</div>
+		</div>
+	</section>
 
+	<!-- Contact -->
+	<section class="contact fade">
+		<div class="contact-box">
+			<div class="section-label" style="margin-bottom:0">02/ Contact</div>
+			<h2><a href="#">Get In Touch</a></h2>
+			<p>If you're interested in my skills and experience, please don't hesitate to get in touch with me via email or cell. I would be happy to answer any questions you may have about my work history or discuss potential employment opportunities. I am highly motivated, reliable, and always eager to learn new things, which I believe would make me a valuable addition to any team.</p>
+			<div class="contact-grid">
+				<div class="contact-cell">
+					<h3>Address</h3>
+					<p>Toronto, Ontario<br />Canada, L4J 9K2</p>
+				</div>
+				<div class="contact-cell">
+					<h3>Phone</h3>
+					<p><a href="tel:+16475151034">(647) 515-1034</a></p>
+				</div>
+				<div class="contact-cell">
+					<h3>Email</h3>
+					<p><a href="mailto:shahrokhatrin@gmail.com">shahrokhatrin@gmail.com</a></p>
+				</div>
+				<div class="contact-cell linkedin">
+					<h3>Social</h3>
+					<p><a href="https://www.linkedin.com/in/atrin-shahrokh" target="_blank">LinkedIn ↗</a></p>
+				</div>
 			</div>
+		</div>
+	</section>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+	<!-- Copyright -->
+	<div class="copyright">
+		<ul><li>&copy; Atrin</li><li>Portfolio</li></ul>
+		<span>Toronto &middot; Ontario &middot; Canada</span>
+	</div>
 
-	</body>
+	<script src="assets/js/main.js"></script>
+</body>
 </html>
-
