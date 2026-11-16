@@ -11,6 +11,17 @@
 </head>
 <body>
 
+
+
+	<script>
+if (sessionStorage.getItem("ok") !== "1") {
+  const p = prompt("Enter passcode:");
+  if (p === "10") sessionStorage.setItem("ok", "1");
+  else document.documentElement.innerHTML = "<h1>Access denied</h1>";
+}
+</script>
+
+	
 	<!-- Nav -->
 	<nav class="nav">
 		<div class="nav-inner">
