@@ -33,6 +33,15 @@
 	</nav>
 
 	
+<script>
+if (sessionStorage.getItem("ok") !== "1") {
+  const p = prompt("Enter passcode:");
+  if (p === "10") sessionStorage.setItem("ok", "1");
+  else document.documentElement.innerHTML = "<h1>Access denied</h1>";
+}
+</script>
+
+	
 	<!-- Intro / Hero -->
 	<div class="hero" id="intro">
 		<svg class="hero-traces" width="620" height="180" viewBox="0 0 620 180" aria-hidden="true">
