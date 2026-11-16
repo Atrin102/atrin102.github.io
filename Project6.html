@@ -32,6 +32,16 @@
 		</div>
 	</nav>
 
+
+	<script>
+if (sessionStorage.getItem("ok") !== "1") {
+  const p = prompt("Enter passcode:");
+  if (p === "10") sessionStorage.setItem("ok", "1");
+  else document.documentElement.innerHTML = "<h1>Access denied</h1>";
+}
+</script>
+
+	
 	<!-- Post header -->
 	<header class="post-head">
 		<span class="date-chip">2024</span>
